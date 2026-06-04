@@ -178,12 +178,11 @@ function Hero() {
             variants={fadeInUp}
             className="mt-6 font-display text-[2.75rem] leading-[1.05] tracking-[-0.02em] sm:text-6xl lg:text-[4.5rem]"
           >
-            Memastikan UMKM{' '}
+            Infrastruktur Ekspor Mandiri untuk{' '}
             <span className="relative inline-block">
-              <span className="gradient-text">benar-benar</span>
+              <span className="gradient-text">UMKM Indonesia</span>
               <span className="absolute -bottom-1 left-0 h-3 w-full rounded-sm bg-gradient-to-r from-primary/15 to-primary/5" />
-            </span>{' '}
-            melakukan ekspor
+            </span>
           </motion.h1>
           <motion.p
             variants={fadeInUp}
