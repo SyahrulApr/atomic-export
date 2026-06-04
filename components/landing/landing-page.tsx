@@ -680,7 +680,7 @@ function Architecture() {
             variants={fadeInUp}
             className="mt-6 font-display text-4xl leading-[1.15] tracking-tight md:text-5xl"
           >
-            Cloud-native, <span className="gradient-text">aman by design</span>
+            Cloud-native, <span className="gradient-text">secure by design</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-5 text-lg text-muted-foreground">
             Containerized microservices (Docker + Kubernetes). Enkripsi AES-256
