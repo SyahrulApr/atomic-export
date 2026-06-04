@@ -11,23 +11,119 @@
 
 ---
 
+### Hero — "Memastikan UMKM benar-benar melakukan ekspor"
+
 Selamat datang.
 
-Hari ini kami akan memperkenalkan **Atomic Export** — sebuah *operating system* ekspor yang dirancang khusus untuk UMKM Indonesia.
+Hari ini kami mempersembahkan **Atomic Export** — sebuah *AI Export Operating System* yang dirancang khusus untuk UMKM Indonesia.
 
-Masalah yang kami selesaikan sederhana tapi krusial: mengapa UMKM yang memiliki produk berkualitas ekspor tetap tidak bisa menembus pasar global secara mandiri? Jawabannya ada tiga: birokrasi yang kompleks, akses pasar yang tersentralisasi di tangan agregator, dan tidak adanya rekam jejak yang bisa digunakan untuk mengakses pembiayaan.
+Tagline kami sederhana namun serius: **memastikan UMKM benar-benar melakukan ekspor** — bukan sekedar belajar teori, bukan sekedar mendapat pendampingan, tapi benar-benar menembus pasar internasional atas nama sendiri.
 
-Atomic Export memecah ketiga hambatan itu dalam satu platform terintegrasi — dari kesiapan ekspor, kepatuhan dokumen otomatis, matchmaking buyer, jaminan mutu, konsolidasi logistik, hingga pembentukan rekam jejak kredit.
+Platform ini sudah dalam pilot aktif, mengawal perjalanan **Kopi Arabika Gayo ke Jepang**, bersama Tim P1438.
 
-Sekarang kami akan menunjukkan bagaimana cara kerjanya, dari awal sampai akhir.
+`[Scroll perlahan ke bawah]`
 
-`[Scroll perlahan ke bawah untuk memperlihatkan seksi-seksi landing page]`
+---
 
-Platform ini dibangun di atas empat fase: *Frictionless Execution*, *Intelligent Automation*, *Network Aggregation*, dan *Financial Inclusion*. Setiap fase saling menguatkan dalam satu *flywheel* kepercayaan dan skala.
+### Partners — Ekosistem Pendukung
 
-Mari kita masuk ke dalam sistemnya.
+Kami tidak bekerja sendiri. Atomic Export terkoneksi dengan ekosistem resmi: **Koperasi Merah Putih**, **PLUT UMKM**, **Bea Cukai**, **Kemendag**, **Sapa UMKM**, dan mitra **Freight Forwarder**. Setiap komponen di dalam platform kami terhubung ke lembaga-lembaga ini secara real.
 
-`[Klik tombol "Masuk ke Dashboard" atau navigasi ke /login]`
+`[Scroll ke bawah]`
+
+---
+
+### Akar Masalah — "UMKM menyumbang 61% PDB, tapi ekspor tertahan di 15,5%"
+
+UMKM menyumbang **61 persen PDB nasional** dan mempekerjakan **117 juta tenaga kerja**. Namun kontribusi ekspor mereka hanya **15,5 persen** — jauh tertinggal dibanding potensinya.
+
+Mengapa? Ada **empat hambatan struktural** yang menjebak UMKM:
+
+**Pertama**, kompleksitas birokrasi ekspor yang tidak ramah bagi pelaku usaha kecil. **Kedua**, ketergantungan pada agregator yang mengambil margin dan identitas ekspor. **Ketiga**, tidak adanya rekam jejak kredit dari aktivitas ekspor. **Keempat**, undisbursed loan senilai **Rp 2.527 triliun** yang tersedia tapi tidak bisa diakses karena UMKM tidak punya credit identity yang diakui.
+
+Atomic Export menjawab keempat hambatan itu sekaligus.
+
+`[Scroll ke bawah]`
+
+---
+
+### Flywheel of Trust & Scale — "Enam tahap operasional end-to-end"
+
+Solusi kami dibangun dalam **enam tahap** yang membentuk sebuah *flywheel* — roda yang semakin berputar semakin kuat:
+
+**Tahap 1, Frictionless Execution**: birokrasi kompleks dipecah jadi tugas mikro kurang dari 15 menit, berbasis gamifikasi AI.
+
+**Tahap 2, Autonomous Compliance**: AI menyusun dokumen ekspor real-time dengan standar zero-defect.
+
+**Tahap 3, Integrated Education**: modul *learning-by-doing* yang terintegrasi langsung ke alur kerja.
+
+**Tahap 4, Community Building**: konsolidasi UMKM ke jaringan Koperasi Merah Putih, ekspor kolektif tanpa kehilangan identitas.
+
+**Tahap 5, Algorithmic Gatekeeper**: verifikasi mutu via Computer Vision, mitigasi penolakan kargo massal.
+
+**Tahap 6, Network Aggregation**: orkestrasi LCL ke FCL dan matchmaking P2P2B langsung ke pembeli — margin dan identitas tetap utuh milik UMKM.
+
+Setiap siklus ekspor yang berhasil memperkuat tiga pusat pertumbuhan: *Self-Evolutionary AI*, *Verified Social Moat*, dan *Digital Trust Capital*.
+
+`[Scroll ke bawah]`
+
+---
+
+### Hybrid Intelligence Architecture — "Empat lapis teknologi, satu sistem operasi ekspor"
+
+Di balik platform ini ada **delapan modul teknologi** yang bekerja dalam satu arsitektur terintegrasi:
+
+**Atomic Engine** memecah birokrasi jadi tugas mikro harian. **RAG Chatbot** berbasis FAISS dan Mistral-7B memberikan panduan regulasi yang kontekstual dan akurat. **Export Readiness Score** menggunakan LightGBM dengan SHAP untuk penilaian kesiapan yang transparan. **Single-Entry Document Automation** menghasilkan enam dokumen perdagangan dari satu kali input.
+
+Ditambah **QC Hybrid Computer Vision** dengan EfficientNet-B4, **P2P2B Matchmaking** berbasis cosine similarity, **konsolidasi logistik LCL ke FCL** via PKBE resmi Bea Cukai, dan **Digital Export Track Record** yang mengubah setiap transaksi menjadi credit identity yang nyata.
+
+`[Scroll ke bawah]`
+
+---
+
+### Impact Scale — "Dari unbankable menjadi layak modal"
+
+Angka-angka ini bukan proyeksi spekulatif. Ini adalah skala dampak yang bisa dicapai:
+
+**61 persen** kontribusi UMKM terhadap PDB nasional yang siap dimaksimalkan. **25,9 persen** baseline konversi dari edukasi ke eksportir aktif yang sudah tervalidasi. **Minus 43 persen** potensi penurunan biaya logistik per unit melalui konsolidasi FCL. Dan **Rp 2.527 triliun** undisbursed loan yang bisa terbuka ketika UMKM punya rekam jejak kredit yang sah.
+
+Inklusi keuangan adalah metrik puncak kami — di sanalah dampak sesungguhnya terakumulasi.
+
+`[Scroll ke bawah]`
+
+---
+
+### System Architecture — "Cloud-native, secure by design"
+
+Dari sisi teknis, Atomic Export dibangun di atas **empat lapis arsitektur**:
+
+**Presentation Layer**: PWA berbasis Next.js, dirancang dengan *cognitive simplicity* untuk pengguna dengan literasi digital rendah sekalipun. **Microservices Layer**: FastAPI async yang menjalankan enam layanan independen. **AI Intelligence Core**: pipeline RAG, LightGBM, dan EfficientNet yang bekerja bersama. **Unified Data Layer**: PostgreSQL, FAISS, Redis, dan Behavioral Log Store untuk credit scoring.
+
+Seluruh infrastruktur berjalan di atas container Docker dan Kubernetes, terenkripsi AES-256 dan TLS 1.3, dengan RBAC *least-privilege*, selaras UU PDP Nomor 27 Tahun 2022 dan ISO 27001.
+
+`[Scroll ke bawah]`
+
+---
+
+### Phased Business Model — "Bertahap dan realistis"
+
+Kami tidak mengklaim menyelesaikan semua masalah di tahun pertama. Model bisnis kami **bertahap dan realistis**:
+
+**Fase 1**, SaaS Atomic Engine — subscription untuk menutup biaya pengembangan. **Fase 2**, EdTech — modul learning bersertifikat dan market intelligence B2B. **Fase 3**, Ekosistem dan Komunitas — P2P2B matchmaking dengan fee wajar. **Fase 4**, Community Aggregation — orkestrasi logistik penuh, revenue inti tumbuh dari transaction fee dan consolidation fee.
+
+Setiap fase memvalidasi model bisnis sebelum melangkah, sambil membangun *moat*: data, komunitas, dan rekam jejak.
+
+`[Scroll ke bagian CTA paling bawah]`
+
+---
+
+### CTA — Ajakan ke Dashboard
+
+Inilah wujud nyata dari seluruh konsep yang baru saja kita lihat — sebuah dashboard yang bisa langsung dioperasikan.
+
+Sekarang mari kita masuk, dan lihat bagaimana **Kopi Gayo menembus pasar Jepang**, satu langkah demi satu langkah.
+
+`[Klik tombol "Buka Dashboard" atau navigasi ke /login]`
 
 ---
 
