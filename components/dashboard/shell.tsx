@@ -166,14 +166,14 @@ export function DashboardShell() {
             </button>
             <div className="flex items-center gap-2.5 rounded-xl border border-border bg-card px-3 py-1.5">
               <span className="grid h-8 w-8 place-items-center rounded-lg gradient-brand-diagonal text-xs font-semibold text-white">
-                KG
+                GS
               </span>
               <div className="hidden sm:block">
                 <p className="text-xs font-semibold leading-none">
-                  Koperasi Kopi Gayo
+                  Koperasi Gula Semut Langgongsari
                 </p>
                 <p className="mt-0.5 text-[10px] text-muted-foreground">
-                  Aceh Tengah · NIB aktif
+                  Cilongok, Banyumas · NIB aktif
                 </p>
               </div>
             </div>

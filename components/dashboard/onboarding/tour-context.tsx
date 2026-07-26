@@ -91,7 +91,7 @@ export const TOUR_STEPS: TourStep[] = [
     target: '[data-tour="docs-grid"]',
     stage: 'Tahap 2',
     title: 'Dokumen siap unduh',
-    desc: 'Commercial Invoice, Packing List, COO Form IJEPA, PEB, klasifikasi HS, dan Phytosanitary.',
+    desc: 'Commercial Invoice, Packing List, COO Form IJEPA, PEB, klasifikasi HS, dan Health Certificate.',
   },
   {
     panel: 'market',

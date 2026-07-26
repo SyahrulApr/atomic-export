@@ -220,7 +220,7 @@ function Hero() {
               Pilot aktif
             </span>
             <span className="text-border">•</span>
-            <span>Kopi Arabika Gayo ke Jepang</span>
+            <span>Gula Semut Kelapa Banyumas ke Jepang</span>
             <span className="text-border">•</span>
             <span className="font-mono text-xs">Tim P1438</span>
           </motion.div>
@@ -469,7 +469,7 @@ function Features() {
     {
       icon: Bot,
       title: 'RAG Chatbot',
-      desc: 'Domain-specific RAG: FAISS + all-MiniLM-L6-v2 + Mistral-7B fine-tuned kepabeanan. Panduan actionable kontekstual.',
+      desc: 'Domain-specific RAG: FAISS + all-MiniLM-L6-v2 + LLM atas korpus regulasi kepabeanan. Panduan actionable bersitasi sumber.',
       tag: 'Semantic Retrieval',
     },
     {
@@ -830,7 +830,7 @@ function CTA() {
           <div className="absolute inset-0 dot-pattern opacity-100" />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl font-display text-4xl leading-[1.1] tracking-tight text-white md:text-5xl">
-              Lihat bagaimana Kopi Gayo menembus Jepang
+              Lihat bagaimana gula semut Banyumas menembus Jepang
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-white/85">
               Jelajahi dashboard interaktif, dari Atomic Steps hingga Digital

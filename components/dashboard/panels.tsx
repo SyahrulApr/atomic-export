@@ -193,7 +193,7 @@ function Banner() {
             Koridor Pilot Aktif
           </p>
           <p className="mt-1 text-lg font-semibold">
-            Kopi Arabika Gayo ke Tokyo, Jepang
+            Gula Semut Kelapa Banyumas ke Osaka, Jepang
           </p>
         </div>
         <div className="flex items-center gap-2 rounded-xl bg-white/15 px-3 py-2 backdrop-blur">
@@ -269,7 +269,7 @@ export function OverviewPanel() {
             {[
               { t: 'COO diterbitkan otomatis', s: 'Tahap 2 · 2 jam lalu', tone: 'success' },
               { t: 'QC Hybrid: batch lolos 98%', s: 'Tahap 5 · 5 jam lalu', tone: 'success' },
-              { t: 'Buyer match baru: Tokyo Coffee Co.', s: 'P2P2B · kemarin', tone: 'primary' },
+              { t: 'Buyer match baru: Osaka Organic Foods', s: 'P2P2B · kemarin', tone: 'primary' },
               { t: 'Kontainer FCL terisi 78%', s: 'Tahap 6 · kemarin', tone: 'warning' },
             ].map((a) => (
               <li key={a.t} className="flex gap-3">
@@ -334,10 +334,10 @@ export function OverviewPanel() {
 /* =========================================================== ATOMIC STEPS */
 const tasks = [
   { t: 'Verifikasi NIB & izin edar BPOM', done: true, min: 10, xp: 120 },
-  { t: 'Unggah spesifikasi produk (grade, kadar air)', done: true, min: 8, xp: 100 },
+  { t: 'Unggah spesifikasi produk (mesh, kadar air)', done: true, min: 8, xp: 100 },
   { t: 'Tetapkan kapasitas produksi bulanan', done: true, min: 5, xp: 80 },
-  { t: 'Pelajari klasifikasi HS Code 0901.21', done: false, min: 12, xp: 150, active: true },
-  { t: 'Konfirmasi spesifikasi buyer Jepang (JAS)', done: false, min: 10, xp: 130 },
+  { t: 'Pelajari klasifikasi HS Code gula semut (1702.90)', done: false, min: 12, xp: 150, active: true },
+  { t: 'Konfirmasi standar organik JAS buyer Jepang', done: false, min: 10, xp: 130 },
   { t: 'Siapkan sampel untuk QC Hybrid', done: false, min: 15, xp: 160 },
 ]
 
@@ -434,20 +434,20 @@ export function AtomicStepsPanel() {
 const chat = [
   {
     role: 'user',
-    text: 'Dokumen apa saja yang wajib untuk ekspor kopi sangrai ke Jepang?',
+    text: 'Dokumen apa saja yang wajib untuk ekspor gula semut kelapa ke Jepang?',
   },
   {
     role: 'bot',
-    text: 'Untuk ekspor kopi (HS 0901.21) ke Jepang, dokumen wajib: (1) PEB, Pemberitahuan Ekspor Barang via INSW, (2) Commercial Invoice, (3) Packing List, (4) Certificate of Origin Form IJEPA untuk preferensi tarif, dan (5) Phytosanitary Certificate dari Karantina. Jepang juga menerapkan Food Sanitation Act, pastikan lolos uji residu pestisida MAFF.',
-    sources: ['INSW', 'Permendag', 'MAFF Japan', 'IJEPA'],
+    text: 'Untuk gula semut kelapa (pos tarif famili HS 1702.90) ke Jepang, dokumen wajib: (1) PEB, Pemberitahuan Ekspor Barang via INSW, (2) Commercial Invoice, (3) Packing List, (4) Certificate of Origin, dan (5) Health Certificate untuk produk pangan olahan. Jepang menerapkan Food Sanitation Act, jadi hasil uji laboratorium pangan perlu disiapkan sebelum pengapalan.',
+    sources: ['INSW', 'Permendag', 'MAFF Japan'],
   },
   {
     role: 'user',
-    text: 'Apakah Form IJEPA bisa menurunkan tarif bea masuk?',
+    text: 'Apa fungsi Certificate of Origin Form IJEPA?',
   },
   {
     role: 'bot',
-    text: 'Ya. Dengan Certificate of Origin Form IJEPA, kopi olahan Indonesia memperoleh preferensi tarif menuju 0% di Jepang (vs tarif MFN umum). Syaratnya origin criteria terpenuhi, kopi Gayo memenuhi Wholly Obtained. Saya sudah menyiapkan draf COO Anda di menu Dokumen.',
+    text: 'Form IJEPA adalah dasar untuk mengajukan klaim tarif preferensi di bawah perjanjian Indonesia-Jepang. Besaran tarifnya mengikuti IJEPA Tariff Schedule pada pos tarif produk Anda, jadi perlu diverifikasi per pos, bukan otomatis nol. Syarat utamanya kriteria origin terpenuhi. Draf COO Anda tersedia di menu Dokumen untuk ditinjau sebelum diajukan.',
     sources: ['IJEPA Tariff Schedule', 'Bea Cukai'],
   },
 ]
@@ -530,7 +530,7 @@ export function CopilotPanel() {
           <div>
             <p className="text-sm font-semibold">AI Copilot Ekspor</p>
             <p className="text-xs text-muted-foreground">
-              RAG · FAISS + Mistral-7B (fine-tuned kepabeanan)
+              RAG · FAISS + sentence-transformers + LLM
             </p>
           </div>
           <span className="ml-auto flex items-center gap-1.5 text-xs text-success">
@@ -638,10 +638,10 @@ const radar = [
 ]
 const shap = [
   { f: 'NIB & izin edar lengkap', v: 18, pos: true },
-  { f: 'Grade kopi specialty (84+)', v: 15, pos: true },
+  { f: 'Kadar air memenuhi standar', v: 15, pos: true },
   { f: '12 hari streak Atomic Steps', v: 11, pos: true },
   { f: 'Kapasitas < target buyer', v: -7, pos: false },
-  { f: 'Belum ada sertifikasi JAS', v: -5, pos: false },
+  { f: 'Belum ada sertifikasi organik JAS', v: -5, pos: false },
 ]
 
 export function ReadinessPanel() {
@@ -744,8 +744,8 @@ const docs = [
   { name: 'Packing List', code: 'PL-2026-0312', status: 'Siap', icon: Package },
   { name: 'Certificate of Origin (Form IJEPA)', code: 'COO-2026-0312', status: 'Siap', icon: BadgeCheck },
   { name: 'PEB, Pemberitahuan Ekspor Barang', code: 'PEB-DRAFT', status: 'Draf', icon: FileText },
-  { name: 'Klasifikasi HS Code 0901.21', code: 'HS-VERIFIED', status: 'Terverifikasi', icon: CheckCheck },
-  { name: 'Phytosanitary Certificate', code: 'PHYTO-REQ', status: 'Menunggu', icon: ShieldCheck },
+  { name: 'Klasifikasi HS Code 1702.90', code: 'HS-REVIEW', status: 'Terverifikasi', icon: CheckCheck },
+  { name: 'Health Certificate produk pangan', code: 'HC-REQ', status: 'Menunggu', icon: ShieldCheck },
 ]
 
 export function DocumentsPanel() {
@@ -810,9 +810,9 @@ const demand = [
   { m: 'Q4', v: 91 },
 ]
 const buyers = [
-  { name: 'Tokyo Coffee Co.', loc: 'Tokyo, Jepang', match: 94, verified: true, vol: '2× 20ft / kuartal' },
-  { name: 'Osaka Specialty Roasters', loc: 'Osaka, Jepang', match: 89, verified: true, vol: '1× 20ft / kuartal' },
-  { name: 'Kyoto Bean House', loc: 'Kyoto, Jepang', match: 81, verified: false, vol: 'LCL fleksibel' },
+  { name: 'Osaka Organic Foods', loc: 'Osaka, Jepang', match: 94, verified: true, vol: '2× 20ft / kuartal' },
+  { name: 'Kyoto Natural Sweeteners', loc: 'Kyoto, Jepang', match: 89, verified: true, vol: '1× 20ft / kuartal' },
+  { name: 'Tokyo Wholefoods Trading', loc: 'Tokyo, Jepang', match: 81, verified: false, vol: 'LCL fleksibel' },
 ]
 
 export function MarketPanel() {
@@ -820,7 +820,7 @@ export function MarketPanel() {
     <Panel>
       <div className="grid gap-5 lg:grid-cols-3">
         <Card className="lg:col-span-1">
-          <CardTitle icon={TrendingUp} sub="Indeks permintaan kopi specialty Jepang">
+          <CardTitle icon={TrendingUp} sub="Indeks permintaan pemanis alami Jepang">
             Market Intelligence
           </CardTitle>
           <div className="h-44">
@@ -899,10 +899,10 @@ function Handshakeicon() {
 
 /* ===================================================================== QC */
 const batch = [
-  { id: 'GYO-A1', grade: 'Specialty 86', defect: 1.2, pass: true },
-  { id: 'GYO-A2', grade: 'Specialty 85', defect: 1.8, pass: true },
-  { id: 'GYO-A3', grade: 'Premium 83', defect: 2.4, pass: true },
-  { id: 'GYO-B1', grade: 'Reject', defect: 8.6, pass: false },
+  { id: 'GSL-A1', grade: 'Grade A · mesh 16', defect: 1.2, pass: true },
+  { id: 'GSL-A2', grade: 'Grade A · mesh 18', defect: 1.8, pass: true },
+  { id: 'GSL-A3', grade: 'Grade B · mesh 20', defect: 2.4, pass: true },
+  { id: 'GSL-B1', grade: 'Reject · menggumpal', defect: 8.6, pass: false },
 ]
 
 export function QCPanel() {
@@ -917,7 +917,7 @@ export function QCPanel() {
             <div className="absolute inset-0 dot-pattern opacity-100" />
             <Package className="relative h-16 w-16 text-white/90" />
             <div className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-2.5 py-1 text-xs font-medium">
-              Green bean · biji kopi
+              Kristal gula semut
             </div>
           </div>
           <div className="mt-4 space-y-3">
@@ -990,10 +990,10 @@ export function QCPanel() {
 
 /* ============================================================== LOGISTICS */
 const contributors = [
-  { name: 'Koperasi Kopi Gayo', vol: 38 },
-  { name: 'UMKM Takengon Jaya', vol: 22 },
-  { name: 'Tani Bener Meriah', vol: 18 },
-  { name: 'Gayo Highland Co-op', vol: 0 },
+  { name: 'Koperasi Gula Semut Langgongsari', vol: 38 },
+  { name: 'UMKM Pageraji Manis', vol: 22 },
+  { name: 'Tani Cilongok Sejahtera', vol: 18 },
+  { name: 'KWT Langgongsari', vol: 0 },
 ]
 
 export function LogisticsPanel() {
@@ -1091,9 +1091,9 @@ export function LogisticsPanel() {
 
 /* ============================================================ TRACK RECORD */
 const history = [
-  { date: '2026-02-18', buyer: 'Tokyo Coffee Co.', val: '320 jt', peb: 'PEB-0312', status: 'Selesai' },
-  { date: '2026-01-22', buyer: 'Osaka Roasters', val: '240 jt', peb: 'PEB-0287', status: 'Selesai' },
-  { date: '2025-12-09', buyer: 'Tokyo Coffee Co.', val: '180 jt', peb: 'PEB-0241', status: 'Selesai' },
+  { date: '2026-02-18', buyer: 'Osaka Organic Foods', val: '320 jt', peb: 'PEB-0312', status: 'Selesai' },
+  { date: '2026-01-22', buyer: 'Kyoto Natural Sweeteners', val: '240 jt', peb: 'PEB-0287', status: 'Selesai' },
+  { date: '2025-12-09', buyer: 'Osaka Organic Foods', val: '180 jt', peb: 'PEB-0241', status: 'Selesai' },
 ]
 
 export function TrackRecordPanel() {
