@@ -1,47 +1,52 @@
-Mari lihat satu koridor pilot.
-Produsen gula semut di Cilongok, Banyumas.
+Produsen gula semut di Banyumas.
+Sanggup produksi mutu ekspor, belum pernah jadi eksportir.
 
-Kapasitasnya sudah ada. Status eksportir atas nama sendiri belum pernah.
+Yang menghalangi bukan mutunya.
+Tapi birokrasi, dan perantara.
 
-Mulai dari diagnosis.
-Skor kesiapan delapan puluh dua dari seratus. Faktor yang menekan skor ditampilkan terbuka, bukan disembunyikan.
+Pertanyaan pertamanya selalu sama: saya harus mulai dari mana.
+Skor delapan puluh dua, plus daftar apa yang menahannya.
 
-Dari skor itu lahir daftar tugas.
-Prosedur yang biasanya bikin berhenti di niat, dipecah jadi tugas di bawah lima belas menit.
+Cuma seperempat peserta pelatihan ekspor benar-benar mengekspor.
+Jadi birokrasinya dipecah jadi tugas lima belas menit.
 
-Perhatikan bagian ini.
-Data transaksi diisi satu kali saja. Produk, pos tarif, kuantitas, harga, pembeli.
-Sekali tekan, enam dokumen perdagangan langsung terbentuk.
+Bagian paling melelahkan dari ekspor bukan mengirim barang. Tapi mengisi data yang sama, berulang kali, di formulir berbeda.
+Di sini: sekali isi. Enam dokumen keluar.
 
-Aturan tiap negara berbeda dan sering berubah.
-Pertanyaan regulasi dijawab dengan sitasi dokumen sumber. Perhatikan jawaban soal Form IJEPA: tarif preferensi tetap harus diverifikasi per pos tarif, tidak otomatis nol.
+Aturan tiap negara beda dan berubah. Salah tafsir, barang tertahan di pelabuhan.
+Jawaban di sini selalu bawa sitasi.
+Termasuk yang tidak enak didengar: Form IJEPA bukan jaminan tarif nol.
 
-Semua dokumen keluar atas nama UMKM sendiri, bukan atas nama perantara.
+Semuanya terbit atas nama UMKM.
+Bukan atas nama perantara.
 
-Akses pembeli tidak lagi lewat perantara.
-Profil produk dicocokkan ke pembeli terverifikasi sebagai titik awal negosiasi.
+Undername ke perantara: dua sampai lima juta per pengiriman.
+Di sini, UMKM ketemu pembeli langsung.
 
-Ini yang terjadi di belakang layar.
-Profil, spesifikasi, foto produk, dan pertanyaan regulasi masuk sebagai input.
-Satu prinsip berlaku di semuanya: data anomali ditandai untuk ditinjau manusia.
+Di belakangnya empat komponen. RAG untuk regulasi. Scoring yang alasannya bisa dibuka. Vision untuk mutu.
+Dan satu aturan: data anomali tidak diproses otomatis. Manusia yang putuskan.
 
-Mutu contohnya.
-Computer vision menyaring lebih dulu, keputusan akhir tetap di surveyor lapangan.
+Satu batch cacat bisa bikin satu kontainer ditolak.
+Jadi vision menyaring, surveyor yang memutuskan.
 
-Volume kecil bikin ongkos mahal.
-Kargo digabung jadi kontainer penuh, tapi setiap UMKM tetap memegang PEB sendiri.
+Kirim sedikit, ongkos per kilo mahal.
+Digabung jadi kontainer penuh, turun sekitar tiga puluh persen.
+PEB tetap masing-masing.
 
-Dan inilah tujuan akhirnya.
-Transaksi tercatat permanen atas nama koperasi. Riwayat inilah yang bisa dinilai lembaga keuangan.
+Dan ini yang sebenarnya dikejar.
+Tiap pengiriman jadi rekam jejak. Atas nama sendiri.
+Ini yang bisa dibaca bank.
 
-Nilainya bisa dihitung.
-Selisih harga yang tadinya diambil pengepul kembali ke produsen. Ini proyeksi koridor pilot.
+Lokal lima belas ribu per kilo. FOB kisaran tiga puluh lima ribu.
+Acuan koperasi sejenis, bukan hasil kami.
 
-Terbuka soal posisi kami.
-Antarmuka dan alurnya berjalan. Scoring dan computer vision masih simulasi.
+Terbuka: antarmuka dan alurnya jalan.
+Scoring dan vision masih simulasi, integrasi lembaga masih penjajakan.
 
-Langkah berikutnya bertahap.
-Pilot Banyumas Semester Dua, koridor kedua, skala nasional, lalu UMKM Indonesia tampil setara eksportir besar.
+Dua puluh produsen dulu, di Banyumas.
+Lalu koridor kedua. Lalu nasional.
+Sampai UMKM Indonesia berdiri di meja yang sama dengan eksportir besar.
 
-Untuk itu kami mencari mitra: konsolidator berizin, surveyor, dan koperasi pendamping.
-Atomic Export. Ekspor atas nama sendiri.
+Yang kami cari sekarang: konsolidator berizin, surveyor, dan koperasi pendamping.
+Atomic Export.
+Supaya UMKM ekspor, atas nama sendiri.

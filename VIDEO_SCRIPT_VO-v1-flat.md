@@ -74,102 +74,88 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 
 # BAGIAN 2 — DEMO (0-120 detik)
 
-Timecode cocok satu-satu dengan `components/showcase/scenes.ts`.
-
-Prinsip yang dipakai di revisi ini:
-
-- **Buka dengan ketegangan, bukan pengantar.** Versi sebelumnya membuka dengan
-  "Mari lihat satu koridor pilot", yang tidak menahan siapa pun.
-- **Jangan narasikan apa yang sudah terlihat.** Ini penyebab utama versi lama
-  terasa datar. Gambarnya sudah menunjukkan dokumen keluar; narasi tidak perlu
-  mengulang. Tugas narasi membawa yang tidak kelihatan: taruhannya.
-- **Angka spesifik, bukan kata sifat.** "Dua sampai lima juta per pengiriman"
-  bekerja; "sangat efisien" tidak.
-- **Satu frasa pengunci diulang.** "Atas nama sendiri" muncul di tiga titik
-  supaya ada yang tersangkut di kepala penonton.
-- **Tetap tidak melebih-lebihkan.** Bagian IJEPA justru dipakai sebagai bukti
-  ketelitian, dan segmen status tetap menyebut apa yang belum jalan.
+Visual: video showcase yang sudah dirender. Timecode di bawah relatif terhadap
+awal segmen demo dan cocok satu-satu dengan `components/showcase/scenes.ts`.
 
 ### 0-5 detik · `intro` (±13 kata)
 
-> Produsen gula semut di Banyumas. || Sanggup produksi mutu ekspor, | belum
-> pernah jadi eksportir.
+> Mari lihat satu koridor pilot. || Produsen gula semut di Cilongok, Banyumas.
 
 ### 5-9 detik · `overview` (±10 kata)
 
-> Yang menghalangi bukan mutunya. || Tapi birokrasi, dan perantara.
+> Kapasitasnya sudah ada. | Status eksportir atas nama sendiri belum pernah.
 
 ### 9-17 detik · `readiness` (±20 kata)
 
-> Pertanyaan pertamanya selalu sama: | saya harus mulai dari mana. || Skor
-> delapan puluh dua, | plus daftar apa yang menahannya.
+> Mulai dari diagnosis. || Skor kesiapan delapan puluh dua dari seratus. |
+> Faktor yang menekan skor ditampilkan terbuka, bukan disembunyikan.
 
 ### 17-24 detik · `atomic` (±18 kata)
 
-> Cuma seperempat peserta pelatihan ekspor benar-benar mengekspor. || Jadi
-> birokrasinya dipecah jadi tugas lima belas menit.
+> Dari skor itu lahir daftar tugas. || Prosedur yang biasanya bikin berhenti di
+> niat, dipecah jadi tugas di bawah lima belas menit.
 
 ### 24-35 detik · `formfill` (±28 kata)
 
-> Bagian paling melelahkan dari ekspor bukan mengirim barang. | Tapi mengisi
-> data yang sama, | berulang kali, | di formulir berbeda. || Di sini: | sekali
-> isi. | Enam dokumen keluar.
+> Perhatikan bagian ini. || Data transaksi diisi satu kali saja. | Produk, pos
+> tarif, kuantitas, harga, pembeli. || Sekali tekan, | enam dokumen perdagangan
+> langsung terbentuk.
 
 ### 35-46 detik · `copilot` (±28 kata)
 
-> Aturan tiap negara beda dan berubah. | Salah tafsir, | barang tertahan di
-> pelabuhan. || Jawaban di sini selalu bawa sitasi. || Termasuk yang tidak enak
-> didengar: | Form IJEPA bukan jaminan tarif nol.
+> Aturan tiap negara berbeda dan sering berubah. || Pertanyaan regulasi dijawab
+> dengan sitasi dokumen sumber. | Perhatikan jawaban soal Form IJEPA: | tarif
+> preferensi tetap harus diverifikasi per pos tarif, tidak otomatis nol.
 
 ### 46-51 detik · `documents` (±13 kata)
 
-> Semuanya terbit atas nama UMKM. || Bukan atas nama perantara.
+> Semua dokumen keluar atas nama UMKM sendiri, | bukan atas nama perantara.
 
 ### 51-58 detik · `market` (±18 kata)
 
-> Undername ke perantara: | dua sampai lima juta per pengiriman. || Di sini,
-> UMKM ketemu pembeli langsung.
+> Akses pembeli tidak lagi lewat perantara. || Profil produk dicocokkan ke
+> pembeli terverifikasi sebagai titik awal negosiasi.
 
 ### 58-69 detik · `pipeline` (±28 kata)
 
-> Di belakangnya empat komponen. | RAG untuk regulasi. | Scoring yang alasannya
-> bisa dibuka. | Vision untuk mutu. || Dan satu aturan: | data anomali tidak
-> diproses otomatis. | Manusia yang putuskan.
+> Ini yang terjadi di belakang layar. || Profil, spesifikasi, foto produk, dan
+> pertanyaan regulasi masuk sebagai input. || Satu prinsip berlaku di semuanya: |
+> data anomali ditandai untuk ditinjau manusia.
 
 ### 69-75 detik · `qc` (±15 kata)
 
-> Satu batch cacat bisa bikin satu kontainer ditolak. || Jadi vision menyaring, |
-> surveyor yang memutuskan.
+> Mutu contohnya. || Computer vision menyaring lebih dulu, | keputusan akhir
+> tetap di surveyor lapangan.
 
 ### 75-82 detik · `logistics` (±18 kata)
 
-> Kirim sedikit, ongkos per kilo mahal. || Digabung jadi kontainer penuh, | turun
-> sekitar tiga puluh persen. || PEB tetap masing-masing.
+> Volume kecil bikin ongkos mahal. || Kargo digabung jadi kontainer penuh, | tapi
+> setiap UMKM tetap memegang PEB sendiri.
 
 ### 82-89 detik · `track` (±18 kata)
 
-> Dan ini yang sebenarnya dikejar. || Tiap pengiriman jadi rekam jejak. | Atas
-> nama sendiri. || Ini yang bisa dibaca bank.
+> Dan inilah tujuan akhirnya. || Transaksi tercatat permanen atas nama koperasi. |
+> Riwayat inilah yang bisa dinilai lembaga keuangan.
 
 ### 89-96 detik · `value` (±18 kata)
 
-> Lokal lima belas ribu per kilo. | FOB kisaran tiga puluh lima ribu. || Acuan
-> koperasi sejenis, | bukan hasil kami.
+> Nilainya bisa dihitung. || Selisih harga yang tadinya diambil pengepul kembali
+> ke produsen. | Ini proyeksi koridor pilot.
 
 ### 96-102 detik · `status` (±15 kata)
 
-> Terbuka: antarmuka dan alurnya jalan. || Scoring dan vision masih simulasi, |
-> integrasi lembaga masih penjajakan.
+> Terbuka soal posisi kami. || Antarmuka dan alurnya berjalan. | Scoring dan
+> computer vision masih simulasi.
 
 ### 102-111 detik · `roadmap` (±23 kata)
 
-> Dua puluh produsen dulu, di Banyumas. || Lalu koridor kedua. | Lalu nasional.
-> || Sampai UMKM Indonesia berdiri di meja yang sama dengan eksportir besar.
+> Langkah berikutnya bertahap. || Pilot Banyumas Semester Dua, | koridor kedua,
+> skala nasional, | lalu UMKM Indonesia tampil setara eksportir besar.
 
 ### 111-120 detik · `outro` (±23 kata)
 
-> Yang kami cari sekarang: | konsolidator berizin, | surveyor, | dan koperasi
-> pendamping. || Atomic Export. || Supaya UMKM ekspor, | atas nama sendiri.
+> Untuk itu kami mencari mitra: | konsolidator berizin, surveyor, dan koperasi
+> pendamping. || Atomic Export. | Ekspor atas nama sendiri.
 
 ---
 

@@ -1,2 +1,2 @@
-Mutu contohnya.
-Computer vision menyaring lebih dulu, keputusan akhir tetap di surveyor lapangan.
+Satu batch cacat bisa bikin satu kontainer ditolak.
+Jadi vision menyaring, surveyor yang memutuskan.

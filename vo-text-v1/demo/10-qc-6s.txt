@@ -1,0 +1,2 @@
+Mutu contohnya.
+Computer vision menyaring lebih dulu, keputusan akhir tetap di surveyor lapangan.

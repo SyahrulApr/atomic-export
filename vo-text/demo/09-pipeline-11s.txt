@@ -1,3 +1,2 @@
-Ini yang terjadi di belakang layar.
-Profil, spesifikasi, foto produk, dan pertanyaan regulasi masuk sebagai input.
-Satu prinsip berlaku di semuanya: data anomali ditandai untuk ditinjau manusia.
+Di belakangnya empat komponen. RAG untuk regulasi. Scoring yang alasannya bisa dibuka. Vision untuk mutu.
+Dan satu aturan: data anomali tidak diproses otomatis. Manusia yang putuskan.

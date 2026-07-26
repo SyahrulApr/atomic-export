@@ -1,0 +1,2 @@
+Di belakangnya empat komponen: RAG untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
+Setiap keluaran bisa ditelusuri penggunanya.

@@ -1,0 +1,19 @@
+Kami Tetra Core.
+Atomic Export, sistem operasi ekspor untuk UMKM yang belum pernah ekspor sendiri.
+
+Produsen kecil sudah mampu berproduksi. Tapi sembilan puluh enam persen ekspor UMKM lewat perantara.
+Nama mereka hilang dari dokumen. Margin terpotong, dan bank tidak pernah melihat mereka.
+
+Ambil satu produsen gula semut di Cilongok, Banyumas.
+Platform kami memberi skor kesiapan ekspor beserta faktor penekannya. Birokrasi dipecah jadi tugas di bawah lima belas menit.
+Copilot menjawab pertanyaan regulasi dengan sitasi resmi. Satu kali input menghasilkan enam dokumen.
+Kargo digabung jadi kontainer penuh, tapi PEB tetap atas nama sendiri.
+
+Di belakangnya empat komponen: RAG untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
+Setiap keluaran bisa ditelusuri penggunanya.
+
+Dampaknya konkret.
+Harga jual berpotensi naik dari lima belas ribu rupiah per kilogram menjadi kisaran tiga puluh lima ribu. Dan tiap transaksi jadi rekam jejak untuk mengakses pembiayaan.
+
+Status kami Pre-MVP, pilot Semester Dua.
+Kami mencari konsolidator, surveyor, dan mitra koperasi.

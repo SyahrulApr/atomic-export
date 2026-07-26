@@ -1,3 +1,2 @@
-Perhatikan bagian ini.
-Data transaksi diisi satu kali saja. Produk, pos tarif, kuantitas, harga, pembeli.
-Sekali tekan, enam dokumen perdagangan langsung terbentuk.
+Bagian paling melelahkan dari ekspor bukan mengirim barang. Tapi mengisi data yang sama, berulang kali, di formulir berbeda.
+Di sini: sekali isi. Enam dokumen keluar.

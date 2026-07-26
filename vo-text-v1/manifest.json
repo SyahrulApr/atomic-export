@@ -53,7 +53,7 @@
     "window": "0-5s",
     "targetSeconds": 5,
     "budgetWords": 13,
-    "actualWords": 13
+    "actualWords": 11
   },
   {
     "part": "demo",
@@ -61,7 +61,7 @@
     "window": "5-9s",
     "targetSeconds": 4,
     "budgetWords": 10,
-    "actualWords": 8
+    "actualWords": 10
   },
   {
     "part": "demo",
@@ -77,7 +77,7 @@
     "window": "17-24s",
     "targetSeconds": 7,
     "budgetWords": 18,
-    "actualWords": 15
+    "actualWords": 21
   },
   {
     "part": "demo",
@@ -85,7 +85,7 @@
     "window": "24-35s",
     "targetSeconds": 11,
     "budgetWords": 28,
-    "actualWords": 25
+    "actualWords": 22
   },
   {
     "part": "demo",
@@ -93,7 +93,7 @@
     "window": "35-46s",
     "targetSeconds": 11,
     "budgetWords": 28,
-    "actualWords": 29
+    "actualWords": 30
   },
   {
     "part": "demo",
@@ -101,7 +101,7 @@
     "window": "46-51s",
     "targetSeconds": 5,
     "budgetWords": 13,
-    "actualWords": 9
+    "actualWords": 11
   },
   {
     "part": "demo",
@@ -109,7 +109,7 @@
     "window": "51-58s",
     "targetSeconds": 7,
     "budgetWords": 18,
-    "actualWords": 15
+    "actualWords": 16
   },
   {
     "part": "demo",
@@ -117,7 +117,7 @@
     "window": "58-69s",
     "targetSeconds": 11,
     "budgetWords": 28,
-    "actualWords": 26
+    "actualWords": 27
   },
   {
     "part": "demo",
@@ -125,7 +125,7 @@
     "window": "69-75s",
     "targetSeconds": 6,
     "budgetWords": 15,
-    "actualWords": 14
+    "actualWords": 13
   },
   {
     "part": "demo",
@@ -133,7 +133,7 @@
     "window": "75-82s",
     "targetSeconds": 7,
     "budgetWords": 18,
-    "actualWords": 18
+    "actualWords": 17
   },
   {
     "part": "demo",
@@ -141,7 +141,7 @@
     "window": "82-89s",
     "targetSeconds": 7,
     "budgetWords": 18,
-    "actualWords": 18
+    "actualWords": 17
   },
   {
     "part": "demo",
@@ -149,7 +149,7 @@
     "window": "89-96s",
     "targetSeconds": 7,
     "budgetWords": 18,
-    "actualWords": 18
+    "actualWords": 16
   },
   {
     "part": "demo",
@@ -165,7 +165,7 @@
     "window": "102-111s",
     "targetSeconds": 9,
     "budgetWords": 23,
-    "actualWords": 22
+    "actualWords": 18
   },
   {
     "part": "demo",
@@ -173,6 +173,6 @@
     "window": "111-120s",
     "targetSeconds": 9,
     "budgetWords": 23,
-    "actualWords": 18
+    "actualWords": 17
   }
 ]
