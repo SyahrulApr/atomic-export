@@ -20,3 +20,6 @@ tsconfig.tsbuildinfo
 
 # Rendered showcase videos and frames
 video-out/
+
+# Generated narration audio, rebuild with tools/tts-build.mjs
+vo-out/

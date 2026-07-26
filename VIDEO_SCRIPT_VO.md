@@ -77,7 +77,7 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 Visual: video showcase yang sudah dirender. Timecode di bawah relatif terhadap
 awal segmen demo dan cocok satu-satu dengan `components/showcase/scenes.ts`.
 
-### 0-5 detik · `intro` (±12 kata)
+### 0-5 detik · `intro` (±13 kata)
 
 > Mari lihat satu koridor pilot. || Produsen gula semut di Cilongok, Banyumas.
 
@@ -90,69 +90,69 @@ awal segmen demo dan cocok satu-satu dengan `components/showcase/scenes.ts`.
 > Mulai dari diagnosis. || Skor kesiapan delapan puluh dua dari seratus. |
 > Faktor yang menekan skor ditampilkan terbuka, bukan disembunyikan.
 
-### 17-25 detik · `atomic` (±20 kata)
+### 17-24 detik · `atomic` (±18 kata)
 
 > Dari skor itu lahir daftar tugas. || Prosedur yang biasanya bikin berhenti di
 > niat, dipecah jadi tugas di bawah lima belas menit.
 
-### 25-35 detik · `formfill` (±25 kata)
+### 24-34 detik · `formfill` (±25 kata)
 
 > Perhatikan bagian ini. || Data transaksi diisi satu kali saja. | Produk, pos
 > tarif, kuantitas, harga, pembeli. || Sekali tekan, | enam dokumen perdagangan
 > langsung terbentuk.
 
-### 35-46 detik · `copilot` (±28 kata)
+### 34-47 detik · `copilot` (±33 kata)
 
 > Aturan tiap negara berbeda dan sering berubah. || Pertanyaan regulasi dijawab
 > dengan sitasi dokumen sumber. | Perhatikan jawaban soal Form IJEPA: | tarif
 > preferensi tetap harus diverifikasi per pos tarif, tidak otomatis nol.
 
-### 46-52 detik · `documents` (±15 kata)
+### 47-52 detik · `documents` (±13 kata)
 
 > Semua dokumen keluar atas nama UMKM sendiri, | bukan atas nama perantara.
 
-### 52-60 detik · `market` (±20 kata)
+### 52-59 detik · `market` (±18 kata)
 
 > Akses pembeli tidak lagi lewat perantara. || Profil produk dicocokkan ke
 > pembeli terverifikasi sebagai titik awal negosiasi.
 
-### 60-70 detik · `pipeline` (±25 kata)
+### 59-71 detik · `pipeline` (±30 kata)
 
 > Ini yang terjadi di belakang layar. || Profil, spesifikasi, foto produk, dan
 > pertanyaan regulasi masuk sebagai input. || Satu prinsip berlaku di semuanya: |
 > data anomali ditandai untuk ditinjau manusia.
 
-### 70-77 detik · `qc` (±18 kata)
+### 71-76 detik · `qc` (±13 kata)
 
 > Mutu contohnya. || Computer vision menyaring lebih dulu, | keputusan akhir
 > tetap di surveyor lapangan.
 
-### 77-84 detik · `logistics` (±18 kata)
+### 76-83 detik · `logistics` (±18 kata)
 
 > Volume kecil bikin ongkos mahal. || Kargo digabung jadi kontainer penuh, | tapi
 > setiap UMKM tetap memegang PEB sendiri.
 
-### 84-91 detik · `track` (±18 kata)
+### 83-90 detik · `track` (±18 kata)
 
 > Dan inilah tujuan akhirnya. || Transaksi tercatat permanen atas nama koperasi. |
 > Riwayat inilah yang bisa dinilai lembaga keuangan.
 
-### 91-98 detik · `value` (±18 kata)
+### 90-96 detik · `value` (±15 kata)
 
 > Nilainya bisa dihitung. || Selisih harga yang tadinya diambil pengepul kembali
 > ke produsen. | Ini proyeksi koridor pilot.
 
-### 98-104 detik · `status` (±15 kata)
+### 96-102 detik · `status` (±15 kata)
 
 > Terbuka soal posisi kami. || Antarmuka dan alurnya berjalan. | Scoring dan
 > computer vision masih simulasi.
 
-### 104-112 detik · `roadmap` (±20 kata)
+### 102-111 detik · `roadmap` (±23 kata)
 
 > Langkah berikutnya bertahap. || Pilot Banyumas Semester Dua, | koridor kedua,
 > skala nasional, | lalu UMKM Indonesia tampil setara eksportir besar.
 
-### 112-120 detik · `outro` (±20 kata)
+### 111-120 detik · `outro` (±23 kata)
 
 > Untuk itu kami mencari mitra: | konsolidator berizin, surveyor, dan koperasi
 > pendamping. || Atomic Export. | Ekspor atas nama sendiri.
