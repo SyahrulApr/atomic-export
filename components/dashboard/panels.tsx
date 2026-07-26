@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useTour } from './onboarding/tour-context'
+import { useTourOptional } from './onboarding/tour-context'
 import {
   ResponsiveContainer,
   RadarChart,
@@ -460,12 +460,14 @@ type ChatMsg = {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
-export function CopilotPanel() {
-  const { isActive, step } = useTour()
-  const tourHere = isActive && step?.panel === 'copilot'
+export function CopilotPanel({ replay = false }: { replay?: boolean }) {
+  const tour = useTourOptional()
+  const tourHere = !!tour?.isActive && tour.step?.panel === 'copilot'
+  // the /showcase timeline drives the replay directly via `replay`
+  const shouldReplay = replay || tourHere
 
-  // when driven by the tour, replay messages live; otherwise show full thread
-  const [msgs, setMsgs] = useState<ChatMsg[]>(tourHere ? [] : chat)
+  // when replaying, type the thread out live; otherwise show the full thread
+  const [msgs, setMsgs] = useState<ChatMsg[]>(shouldReplay ? [] : chat)
   const [draft, setDraft] = useState('')
   const [thinking, setThinking] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -476,16 +478,15 @@ export function CopilotPanel() {
     if (el) el.scrollTop = el.scrollHeight
   }, [msgs, draft, thinking])
 
-  // scripted live demo when the tour reaches this panel
+  // scripted live demo, triggered by the tour or by the showcase timeline
   useEffect(() => {
-    if (!isActive) {
-      // restore static thread once tour is over
+    if (!shouldReplay) {
+      // restore the static thread once the replay is no longer requested
       setMsgs(chat)
       setDraft('')
       setThinking(false)
       return
     }
-    if (!tourHere) return
 
     let cancelled = false
     ;(async () => {
@@ -518,7 +519,7 @@ export function CopilotPanel() {
     return () => {
       cancelled = true
     }
-  }, [isActive, tourHere])
+  }, [shouldReplay])
 
   return (
     <Panel>

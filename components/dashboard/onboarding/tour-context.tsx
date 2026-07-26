@@ -170,6 +170,13 @@ export function useTour() {
   return c
 }
 
+/** Same context, but tolerates being rendered outside a TourProvider.
+ *  Used by panels that are reused on the /showcase route, which drives its
+ *  own timeline instead of the guided tour. */
+export function useTourOptional() {
+  return useContext(Ctx)
+}
+
 export function TourProvider({
   children,
   onPanel,

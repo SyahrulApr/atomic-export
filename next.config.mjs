@@ -6,6 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // the dev overlay badge would otherwise show up in showcase recordings
+  devIndicators: false,
 }
 
 export default nextConfig
