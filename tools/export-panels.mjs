@@ -1,9 +1,9 @@
 /**
- * Exports each dashboard panel as a 2x still for the Remotion composition.
+ * Exports each dashboard panel as a 3x still for the Remotion composition.
  *
  *   node tools/export-panels.mjs [outDir]
  *
- * Output is 3840x2160 PNG per panel, so the Remotion camera can push past
+ * Output is 5760x3240 PNG per panel, so the Remotion camera can push past
  * 1.3x without the frame going soft.
  */
 import { chromium } from 'playwright'
@@ -32,7 +32,7 @@ fs.mkdirSync(OUT, { recursive: true })
 const browser = await chromium.launch({ args: ['--hide-scrollbars'] })
 const page = await browser.newPage({
   viewport: { width: 1920, height: 1080 },
-  deviceScaleFactor: 2,
+  deviceScaleFactor: 3,
 })
 
 for (const panel of PANELS) {

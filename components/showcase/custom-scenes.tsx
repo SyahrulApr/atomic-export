@@ -474,7 +474,7 @@ export function OutroScene() {
           {...rise(9)}
         >
           <span className="rounded-full gradient-brand px-7 py-3 text-base font-semibold text-white shadow-accent-lg">
-            atomicexport.id
+            atomic-export-five.vercel.app
           </span>
           <span className="mt-3 font-mono text-[12px] uppercase tracking-[0.2em] text-muted-foreground/70">
             Tetra Core Team · P1438 · BI-OJK PIDI DIGDAYA Hackathon 2026

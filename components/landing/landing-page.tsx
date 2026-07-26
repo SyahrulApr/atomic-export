@@ -105,7 +105,7 @@ function HeroGraphic() {
     {
       icon: Container,
       title: 'LCL ke FCL',
-      value: '−43% biaya',
+      value: '−30% biaya',
       sub: 'Konsolidasi',
       pos: 'left-6 bottom-6',
       delay: 0.6,
@@ -572,7 +572,7 @@ function Impact() {
   const stats = [
     { value: '61%', label: 'Kontribusi UMKM terhadap PDB nasional' },
     { value: '25,9%', label: 'Baseline konversi edukasi ke eksportir aktif' },
-    { value: '−43%', label: 'Potensi penurunan biaya logistik per unit' },
+    { value: '−30%', label: 'Potensi penurunan biaya logistik per unit' },
     { value: 'Rp2.527T', label: 'Undisbursed loan yang bisa terbuka' },
   ]
   return (

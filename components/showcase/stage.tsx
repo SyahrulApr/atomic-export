@@ -89,7 +89,7 @@ export const StageFrame = forwardRef<
         <div className="flex flex-1 items-center justify-center">
           <div className="flex items-center gap-2 rounded-lg bg-background px-4 py-1.5 text-xs text-muted-foreground">
             <Lock className="h-3 w-3" />
-            atomicexport.id/dashboard
+            atomic-export-five.vercel.app/dashboard
           </div>
         </div>
         <div className="w-16" />

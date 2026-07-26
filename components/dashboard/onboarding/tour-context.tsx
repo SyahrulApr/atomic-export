@@ -126,7 +126,7 @@ export const TOUR_STEPS: TourStep[] = [
     target: '[data-tour="logi-consol"]',
     stage: 'Tahap 6',
     title: 'Konsolidasi LCL ke FCL',
-    desc: 'Kargo kecil beberapa UMKM digabung jadi kontainer penuh. Hemat 43% biaya per unit.',
+    desc: 'Kargo kecil beberapa UMKM digabung jadi kontainer penuh. Hemat sekitar 30% biaya per unit.',
   },
   {
     panel: 'logistics',

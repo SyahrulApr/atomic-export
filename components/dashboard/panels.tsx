@@ -1061,7 +1061,7 @@ export function LogisticsPanel() {
         </Card>
 
         <div className="space-y-5">
-          <Stat icon={Coins} label="Penghematan biaya/unit vs LCL" value="−43%" delta="hemat" tone="success" />
+          <Stat icon={Coins} label="Penghematan biaya/unit vs LCL" value="−30%" delta="hemat" tone="success" />
           <Card data-tour="logi-pkbe">
             <CardTitle sub="Setiap UMKM punya PEB sendiri">Status PKBE</CardTitle>
             <ul className="space-y-3">

@@ -3,12 +3,12 @@
  *
  * Segment boundaries follow the panel's recommended format, compressed
  * slightly so the last 10 seconds are free for the closing and CTA:
- *    0- 10s  pengantar deep dive (aktor, konteks, skenario)
- *   10- 58s  bukti utama inovasi (walkthrough)
- *   58- 86s  cara kerja dan kedalaman solusi
- *   86-102s  bukti validasi atau hasil awal
- *  102-110s  status dan batas kesiapan
- *  110-120s  penutup dan collaboration ask
+ *    0-  9s  pengantar deep dive (aktor, konteks, skenario)
+ *    9- 60s  bukti utama inovasi (walkthrough + simulasi pengisian)
+ *   60- 84s  cara kerja dan kedalaman solusi
+ *   84- 98s  bukti validasi atau hasil awal
+ *   98-104s  status dan batas kesiapan
+ *  104-120s  next steps lalu penutup dan collaboration ask
  *
  * Durations are locked here first; the voice-over script is written to fit
  * these numbers afterwards, not the other way around.
@@ -17,9 +17,11 @@
 export type StageKind =
   | 'panel'
   | 'intro'
+  | 'formfill'
   | 'pipeline'
   | 'value'
   | 'status'
+  | 'roadmap'
   | 'outro'
 
 /** Camera state applied to the 3D stage element. */
@@ -75,7 +77,7 @@ const cam = (p: Partial<Cam> = {}): Cam => ({
 })
 
 export const SCENES: Scene[] = [
-  /* ---------------------------------------- 0-10s · pengantar deep dive */
+  /* ----------------------------------------- 0-9s · pengantar deep dive */
   {
     id: 'intro',
     start: 0,
@@ -97,7 +99,7 @@ export const SCENES: Scene[] = [
   {
     id: 'overview',
     start: 5,
-    dur: 5,
+    dur: 4,
     kind: 'panel',
     panel: 'overview',
     from: cam({ scale: 0.82, rotateX: 14, rotateY: -16, y: 40 }),
@@ -112,11 +114,11 @@ export const SCENES: Scene[] = [
     },
   },
 
-  /* ------------------------------------- 10-58s · bukti utama inovasi */
+  /* -------------------------------------- 9-60s · bukti utama inovasi */
   {
     id: 'readiness',
-    start: 10,
-    dur: 9,
+    start: 9,
+    dur: 8,
     kind: 'panel',
     panel: 'readiness',
     from: cam({ scale: 0.95, rotateY: -6 }),
@@ -134,8 +136,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'atomic',
-    start: 19,
-    dur: 9,
+    start: 17,
+    dur: 8,
     kind: 'panel',
     panel: 'atomic',
     from: cam({ scale: 0.9, rotateX: 8, rotateY: 10 }),
@@ -152,9 +154,27 @@ export const SCENES: Scene[] = [
     },
   },
   {
+    id: 'formfill',
+    start: 25,
+    dur: 10,
+    kind: 'formfill',
+    from: cam({ scale: 0.97, rotateY: 5 }),
+    to: cam({ scale: 1.04, rotateY: -1, x: -40 }),
+    ease: 'power2.inOut',
+    caption: {
+      kicker: 'Input sekali',
+      title: 'Isi data transaksi ',
+      highlight: 'satu kali saja',
+      sub: 'Sisanya diturunkan sistem, tanpa mengisi formulir yang sama berulang.',
+      pos: 'left',
+      from: 'left',
+      delay: 0.3,
+    },
+  },
+  {
     id: 'copilot',
-    start: 28,
-    dur: 13,
+    start: 35,
+    dur: 11,
     kind: 'panel',
     panel: 'copilot',
     from: cam({ scale: 0.92, rotateY: -12, x: 60 }),
@@ -172,8 +192,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'documents',
-    start: 41,
-    dur: 8,
+    start: 46,
+    dur: 6,
     kind: 'panel',
     panel: 'documents',
     from: cam({ scale: 0.86, rotateX: 12, rotateY: 8, y: 30 }),
@@ -191,8 +211,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'market',
-    start: 49,
-    dur: 9,
+    start: 52,
+    dur: 8,
     kind: 'panel',
     panel: 'market',
     from: cam({ scale: 0.95, rotateY: 8 }),
@@ -209,11 +229,11 @@ export const SCENES: Scene[] = [
     },
   },
 
-  /* -------------------------------- 58-86s · cara kerja dan kedalaman */
+  /* -------------------------------- 60-84s · cara kerja dan kedalaman */
   {
     id: 'pipeline',
-    start: 58,
-    dur: 11,
+    start: 60,
+    dur: 10,
     kind: 'pipeline',
     from: cam({ scale: 1.04 }),
     to: cam({ scale: 1 }),
@@ -229,8 +249,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'qc',
-    start: 69,
-    dur: 9,
+    start: 70,
+    dur: 7,
     kind: 'panel',
     panel: 'qc',
     from: cam({ scale: 0.9, rotateX: 10, rotateY: -10 }),
@@ -248,8 +268,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'logistics',
-    start: 78,
-    dur: 8,
+    start: 77,
+    dur: 7,
     kind: 'panel',
     panel: 'logistics',
     from: cam({ scale: 0.92, rotateY: 10, x: -60 }),
@@ -266,11 +286,11 @@ export const SCENES: Scene[] = [
     },
   },
 
-  /* -------------------------------- 86-102s · bukti dan hasil awal */
+  /* --------------------------------- 84-98s · bukti dan hasil awal */
   {
     id: 'track',
-    start: 86,
-    dur: 8,
+    start: 84,
+    dur: 7,
     kind: 'panel',
     panel: 'track',
     from: cam({ scale: 0.88, rotateX: 12, rotateY: 8, y: 40 }),
@@ -288,8 +308,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'value',
-    start: 94,
-    dur: 8,
+    start: 91,
+    dur: 7,
     kind: 'value',
     from: cam({ scale: 1.03 }),
     to: cam({ scale: 1 }),
@@ -304,11 +324,11 @@ export const SCENES: Scene[] = [
     },
   },
 
-  /* ----------------------------- 102-110s · status dan batas kesiapan */
+  /* ------------------------------ 98-104s · status dan batas kesiapan */
   {
     id: 'status',
-    start: 102,
-    dur: 8,
+    start: 98,
+    dur: 6,
     kind: 'status',
     from: cam({ scale: 1.02 }),
     to: cam({ scale: 1 }),
@@ -323,9 +343,26 @@ export const SCENES: Scene[] = [
     },
   },
   {
+    id: 'roadmap',
+    start: 104,
+    dur: 8,
+    kind: 'roadmap',
+    from: cam({ scale: 1.03 }),
+    to: cam({ scale: 1 }),
+    ease: 'none',
+    caption: {
+      kicker: 'Langkah berikutnya',
+      title: 'Dari satu desa, menuju ',
+      highlight: 'skala global',
+      pos: 'top',
+      from: 'down',
+      delay: 0.2,
+    },
+  },
+  {
     id: 'outro',
-    start: 110,
-    dur: 10,
+    start: 112,
+    dur: 8,
     kind: 'outro',
     from: cam({ scale: 1.08 }),
     to: cam({ scale: 1 }),
