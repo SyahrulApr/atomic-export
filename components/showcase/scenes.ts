@@ -159,7 +159,7 @@ export const SCENES: Scene[] = [
   {
     id: 'formfill',
     start: 24,
-    dur: 10,
+    dur: 11,
     kind: 'formfill',
     from: cam({ scale: 0.97, rotateY: 5 }),
     to: cam({ scale: 1.04, rotateY: -1, x: -40 }),
@@ -176,8 +176,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'copilot',
-    start: 34,
-    dur: 13,
+    start: 35,
+    dur: 11,
     kind: 'panel',
     panel: 'copilot',
     from: cam({ scale: 0.92, rotateY: -12, x: 60 }),
@@ -195,7 +195,7 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'documents',
-    start: 47,
+    start: 46,
     dur: 5,
     kind: 'panel',
     panel: 'documents',
@@ -214,7 +214,7 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'market',
-    start: 52,
+    start: 51,
     dur: 7,
     kind: 'panel',
     panel: 'market',
@@ -235,8 +235,8 @@ export const SCENES: Scene[] = [
   /* -------------------------------- 60-84s · cara kerja dan kedalaman */
   {
     id: 'pipeline',
-    start: 59,
-    dur: 12,
+    start: 58,
+    dur: 11,
     kind: 'pipeline',
     from: cam({ scale: 1.04 }),
     to: cam({ scale: 1 }),
@@ -252,8 +252,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'qc',
-    start: 71,
-    dur: 5,
+    start: 69,
+    dur: 6,
     kind: 'panel',
     panel: 'qc',
     from: cam({ scale: 0.9, rotateX: 10, rotateY: -10 }),
@@ -271,7 +271,7 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'logistics',
-    start: 76,
+    start: 75,
     dur: 7,
     kind: 'panel',
     panel: 'logistics',
@@ -292,7 +292,7 @@ export const SCENES: Scene[] = [
   /* --------------------------------- 84-98s · bukti dan hasil awal */
   {
     id: 'track',
-    start: 83,
+    start: 82,
     dur: 7,
     kind: 'panel',
     panel: 'track',
@@ -311,8 +311,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'value',
-    start: 90,
-    dur: 6,
+    start: 89,
+    dur: 7,
     kind: 'value',
     from: cam({ scale: 1.03 }),
     to: cam({ scale: 1 }),

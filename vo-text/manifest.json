@@ -81,24 +81,24 @@
   },
   {
     "part": "demo",
-    "file": "demo/05-formfill-10s.txt",
-    "window": "24-34s",
-    "targetSeconds": 10,
-    "budgetWords": 25,
+    "file": "demo/05-formfill-11s.txt",
+    "window": "24-35s",
+    "targetSeconds": 11,
+    "budgetWords": 28,
     "actualWords": 22
   },
   {
     "part": "demo",
-    "file": "demo/06-copilot-13s.txt",
-    "window": "34-47s",
-    "targetSeconds": 13,
-    "budgetWords": 33,
+    "file": "demo/06-copilot-11s.txt",
+    "window": "35-46s",
+    "targetSeconds": 11,
+    "budgetWords": 28,
     "actualWords": 30
   },
   {
     "part": "demo",
     "file": "demo/07-documents-5s.txt",
-    "window": "47-52s",
+    "window": "46-51s",
     "targetSeconds": 5,
     "budgetWords": 13,
     "actualWords": 11
@@ -106,31 +106,31 @@
   {
     "part": "demo",
     "file": "demo/08-market-7s.txt",
-    "window": "52-59s",
+    "window": "51-58s",
     "targetSeconds": 7,
     "budgetWords": 18,
     "actualWords": 16
   },
   {
     "part": "demo",
-    "file": "demo/09-pipeline-12s.txt",
-    "window": "59-71s",
-    "targetSeconds": 12,
-    "budgetWords": 30,
+    "file": "demo/09-pipeline-11s.txt",
+    "window": "58-69s",
+    "targetSeconds": 11,
+    "budgetWords": 28,
     "actualWords": 27
   },
   {
     "part": "demo",
-    "file": "demo/10-qc-5s.txt",
-    "window": "71-76s",
-    "targetSeconds": 5,
-    "budgetWords": 13,
+    "file": "demo/10-qc-6s.txt",
+    "window": "69-75s",
+    "targetSeconds": 6,
+    "budgetWords": 15,
     "actualWords": 13
   },
   {
     "part": "demo",
     "file": "demo/11-logistics-7s.txt",
-    "window": "76-83s",
+    "window": "75-82s",
     "targetSeconds": 7,
     "budgetWords": 18,
     "actualWords": 17
@@ -138,17 +138,17 @@
   {
     "part": "demo",
     "file": "demo/12-track-7s.txt",
-    "window": "83-90s",
+    "window": "82-89s",
     "targetSeconds": 7,
     "budgetWords": 18,
     "actualWords": 17
   },
   {
     "part": "demo",
-    "file": "demo/13-value-6s.txt",
-    "window": "90-96s",
-    "targetSeconds": 6,
-    "budgetWords": 15,
+    "file": "demo/13-value-7s.txt",
+    "window": "89-96s",
+    "targetSeconds": 7,
+    "budgetWords": 18,
     "actualWords": 16
   },
   {

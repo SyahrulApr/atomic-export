@@ -57,7 +57,7 @@ const durationOf = (f) =>
 
 async function tts(text) {
   const res = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${VOICE}?output_format=mp3_44100_128`,
+    `https://api.elevenlabs.io/v1/text-to-speech/${VOICE}?output_format=mp3_44100_192`,
     {
       method: 'POST',
       headers: { 'xi-api-key': KEY, 'content-type': 'application/json' },
@@ -97,12 +97,32 @@ const segs = fs
 
 const report = []
 
+const MAX_TRIES = Number(process.env.TTS_TRIES ?? 3)
+
 for (const seg of segs) {
   const raw = path.join(OUT, `${seg.name}.raw.mp3`)
   const fitted = path.join(OUT, `${seg.name}.mp3`)
 
-  fs.writeFileSync(raw, await tts(seg.text))
-  const rawDur = durationOf(raw)
+  // The engine does not return the same length twice for the same text, so a
+  // duration measured on one run is not a promise about the next. Rather than
+  // chase an exact fit, retry a segment that would need an audible correction
+  // and keep the shortest take.
+  let rawDur = Infinity
+  let tries = 0
+  while (tries < MAX_TRIES) {
+    const attempt = await tts(seg.text)
+    const tmp = `${raw}.${tries}`
+    fs.writeFileSync(tmp, attempt)
+    const d = durationOf(tmp)
+    if (d < rawDur) {
+      rawDur = d
+      fs.copyFileSync(tmp, raw)
+    }
+    fs.rmSync(tmp)
+    tries += 1
+    if (rawDur / seg.target <= ATEMPO_WARN) break
+  }
+  const retried = tries > 1 ? ` (${tries} take)` : ''
 
   // only ever speed up, never slow down: a short segment just leaves silence,
   // which is fine, whereas stretching audio to fill a gap sounds worse
@@ -135,7 +155,7 @@ for (const seg of segs) {
   console.log(
     `  ${seg.name.padEnd(26)} ${String(seg.target).padStart(3)}s  ` +
       `mentah ${rawDur.toFixed(2).padStart(6)}s  atempo ${tempo.toFixed(3)}  ` +
-      `jadi ${finalDur.toFixed(2)}s${flag}`,
+      `jadi ${finalDur.toFixed(2)}s${retried}${flag}`,
   )
 }
 

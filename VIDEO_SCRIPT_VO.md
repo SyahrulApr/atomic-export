@@ -95,49 +95,49 @@ awal segmen demo dan cocok satu-satu dengan `components/showcase/scenes.ts`.
 > Dari skor itu lahir daftar tugas. || Prosedur yang biasanya bikin berhenti di
 > niat, dipecah jadi tugas di bawah lima belas menit.
 
-### 24-34 detik · `formfill` (±25 kata)
+### 24-35 detik · `formfill` (±28 kata)
 
 > Perhatikan bagian ini. || Data transaksi diisi satu kali saja. | Produk, pos
 > tarif, kuantitas, harga, pembeli. || Sekali tekan, | enam dokumen perdagangan
 > langsung terbentuk.
 
-### 34-47 detik · `copilot` (±33 kata)
+### 35-46 detik · `copilot` (±28 kata)
 
 > Aturan tiap negara berbeda dan sering berubah. || Pertanyaan regulasi dijawab
 > dengan sitasi dokumen sumber. | Perhatikan jawaban soal Form IJEPA: | tarif
 > preferensi tetap harus diverifikasi per pos tarif, tidak otomatis nol.
 
-### 47-52 detik · `documents` (±13 kata)
+### 46-51 detik · `documents` (±13 kata)
 
 > Semua dokumen keluar atas nama UMKM sendiri, | bukan atas nama perantara.
 
-### 52-59 detik · `market` (±18 kata)
+### 51-58 detik · `market` (±18 kata)
 
 > Akses pembeli tidak lagi lewat perantara. || Profil produk dicocokkan ke
 > pembeli terverifikasi sebagai titik awal negosiasi.
 
-### 59-71 detik · `pipeline` (±30 kata)
+### 58-69 detik · `pipeline` (±28 kata)
 
 > Ini yang terjadi di belakang layar. || Profil, spesifikasi, foto produk, dan
 > pertanyaan regulasi masuk sebagai input. || Satu prinsip berlaku di semuanya: |
 > data anomali ditandai untuk ditinjau manusia.
 
-### 71-76 detik · `qc` (±13 kata)
+### 69-75 detik · `qc` (±15 kata)
 
 > Mutu contohnya. || Computer vision menyaring lebih dulu, | keputusan akhir
 > tetap di surveyor lapangan.
 
-### 76-83 detik · `logistics` (±18 kata)
+### 75-82 detik · `logistics` (±18 kata)
 
 > Volume kecil bikin ongkos mahal. || Kargo digabung jadi kontainer penuh, | tapi
 > setiap UMKM tetap memegang PEB sendiri.
 
-### 83-90 detik · `track` (±18 kata)
+### 82-89 detik · `track` (±18 kata)
 
 > Dan inilah tujuan akhirnya. || Transaksi tercatat permanen atas nama koperasi. |
 > Riwayat inilah yang bisa dinilai lembaga keuangan.
 
-### 90-96 detik · `value` (±15 kata)
+### 89-96 detik · `value` (±18 kata)
 
 > Nilainya bisa dihitung. || Selisih harga yang tadinya diambil pengepul kembali
 > ke produsen. | Ini proyeksi koridor pilot.

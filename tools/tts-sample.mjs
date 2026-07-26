@@ -39,7 +39,7 @@ const MODEL = process.env.TTS_MODEL ?? 'eleven_multilingual_v2'
 
 export async function speak({ text, voiceId, model = MODEL }) {
   const res = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
+    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_192`,
     {
       method: 'POST',
       headers: {
