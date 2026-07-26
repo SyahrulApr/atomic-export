@@ -1,2 +1,0 @@
-Di belakangnya empat komponen. RAG untuk regulasi. Scoring yang alasannya bisa dibuka. Vision untuk mutu.
-Dan satu aturan: data anomali tidak diproses otomatis. Manusia yang putuskan.

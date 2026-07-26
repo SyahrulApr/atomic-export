@@ -37,9 +37,44 @@ function cleanLabel(raw) {
     .replace(/^-|-$/g, '')
 }
 
+/**
+ * Acronyms an engine will otherwise read as a single word. Written out with
+ * Indonesian letter names so they are spelled aloud instead.
+ *
+ * Only applied to the generated .txt; the markdown keeps "UMKM" so it stays
+ * readable for a human narrator.
+ *
+ * Acronyms normally spoken as words in Indonesian, like IJEPA, SHAP and JAS,
+ * are deliberately absent.
+ */
+const SPELL_OUT = {
+  UMKM: 'U-M-K-M',
+  PEB: 'P-E-B',
+  RAG: 'R-A-G',
+  HS: 'H-S',
+  FOB: 'F-O-B',
+  COO: 'C-O-O',
+  FCL: 'F-C-L',
+  LCL: 'L-C-L',
+  PKBE: 'P-K-B-E',
+  NIB: 'N-I-B',
+  INSW: 'I-N-S-W',
+  BPOM: 'B-P-O-M',
+  QC: 'Q-C',
+  PLUT: 'P-L-U-T',
+}
+
+function spellAcronyms(text) {
+  let out = text
+  for (const [acr, spoken] of Object.entries(SPELL_OUT)) {
+    out = out.replace(new RegExp(`\\b${acr}\\b`, 'g'), spoken)
+  }
+  return out
+}
+
 /** Collapse the breath marks into ordinary punctuation. */
 function toSpeech(text) {
-  let s = text.replace(/\s+/g, ' ').trim()
+  let s = spellAcronyms(text.replace(/\s+/g, ' ').trim())
 
   // full beat: end the sentence if it is not already ended, then break the line
   s = s.replace(/\s*\|\|\s*/g, (_m, offset, str) => {

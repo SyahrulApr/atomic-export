@@ -76,100 +76,100 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 
 Timecode cocok satu-satu dengan `components/showcase/scenes.ts`.
 
-Revisi ketiga. Yang diperbaiki dari versi sebelumnya:
+Prinsip yang dipakai di revisi ini:
 
-- **Konektor di dalam kalimat.** "namun", "sehingga", "melainkan", "sebab".
-  Versi lalu menempelkan dua fakta tanpa hubungan, dan itu terdengar patah.
-- **Jembatan antar segmen.** Tiap segmen dibuka dengan kata sambung
-  ("Kemudian", "Setelah itu", "Lalu", "Nah", "Contohnya") supaya terasa satu
-  alur, bukan enam belas potongan yang berdiri sendiri.
-- **Konsep dijelaskan sebelum angkanya.** Skor delapan puluh dua tidak lagi
-  muncul mendadak; didahului penjelasan bahwa sistem menilai kesiapan ekspor
-  dari nol sampai seratus.
-- **Sebab-akibat dinyatakan.** Statistik seperempat peserta pelatihan sekarang
-  jadi alasan kenapa birokrasi dipecah, bukan fakta yang menggantung.
+- **Buka dengan ketegangan, bukan pengantar.** Versi sebelumnya membuka dengan
+  "Mari lihat satu koridor pilot", yang tidak menahan siapa pun.
+- **Jangan narasikan apa yang sudah terlihat.** Ini penyebab utama versi lama
+  terasa datar. Gambarnya sudah menunjukkan dokumen keluar; narasi tidak perlu
+  mengulang. Tugas narasi membawa yang tidak kelihatan: taruhannya.
+- **Angka spesifik, bukan kata sifat.** "Dua sampai lima juta per pengiriman"
+  bekerja; "sangat efisien" tidak.
+- **Satu frasa pengunci diulang.** "Atas nama sendiri" muncul di tiga titik
+  supaya ada yang tersangkut di kepala penonton.
+- **Tetap tidak melebih-lebihkan.** Bagian IJEPA justru dipakai sebagai bukti
+  ketelitian, dan segmen status tetap menyebut apa yang belum jalan.
 
-### 0-6 detik · `intro` (±15 kata)
+### 0-5 detik · `intro` (±13 kata)
 
-> Produsen gula semut di Banyumas. | Sanggup produksi mutu ekspor, | namun belum
+> Produsen gula semut di Banyumas. || Sanggup produksi mutu ekspor, | belum
 > pernah jadi eksportir.
 
-### 6-10 detik · `overview` (±10 kata)
+### 5-9 detik · `overview` (±10 kata)
 
-> Yang menghalangi bukan mutunya, | melainkan birokrasi dan perantara.
+> Yang menghalangi bukan mutunya. || Tapi birokrasi, dan perantara.
 
-### 10-18 detik · `readiness` (±21 kata)
+### 9-17 detik · `readiness` (±20 kata)
 
-> Kami mulai dari diagnosis. | Kesiapan ekspornya dinilai nol sampai seratus. ||
-> Produsen ini dapat delapan puluh dua, | plus daftar yang masih menahannya.
+> Pertanyaan pertamanya selalu sama: | saya harus mulai dari mana. || Skor
+> delapan puluh dua, | plus daftar apa yang menahannya.
 
-### 18-27 detik · `atomic` (±23 kata)
+### 17-24 detik · `atomic` (±18 kata)
 
-> Nah, daftar itu tidak dibiarkan menumpuk. | Sebab cuma seperempat peserta
-> pelatihan ekspor yang benar-benar mengekspor. || Jadi birokrasinya dipecah jadi
-> tugas lima belas menit.
+> Cuma seperempat peserta pelatihan ekspor benar-benar mengekspor. || Jadi
+> birokrasinya dipecah jadi tugas lima belas menit.
 
-### 27-36 detik · `formfill` (±23 kata)
+### 24-35 detik · `formfill` (±28 kata)
 
-> Kemudian bagian yang paling melelahkan. | Bukan mengirim barang, | melainkan
-> mengisi data yang sama berulang kali. || Di sini cukup sekali isi, | lalu
-> dokumennya terbentuk.
+> Bagian paling melelahkan dari ekspor bukan mengirim barang. | Tapi mengisi
+> data yang sama, | berulang kali, | di formulir berbeda. || Di sini: | sekali
+> isi. | Enam dokumen keluar.
 
-### 36-47 detik · `copilot` (±27 kata)
+### 35-46 detik · `copilot` (±28 kata)
 
-> Setelah itu muncul soal aturan. | Regulasi tiap negara berbeda dan sering
-> berubah, | sehingga salah tafsir bisa membuat barang tertahan. || Karena itu
-> tiap jawaban di sini membawa sitasi.
+> Aturan tiap negara beda dan berubah. | Salah tafsir, | barang tertahan di
+> pelabuhan. || Jawaban di sini selalu bawa sitasi. || Termasuk yang tidak enak
+> didengar: | Form IJEPA bukan jaminan tarif nol.
 
-### 47-52 detik · `documents` (±12 kata)
+### 46-51 detik · `documents` (±13 kata)
 
-> Hasilnya, semua dokumen terbit atas nama UMKM, | bukan atas nama perantara.
+> Semuanya terbit atas nama UMKM. || Bukan atas nama perantara.
 
-### 52-59 detik · `market` (±18 kata)
+### 51-58 detik · `market` (±18 kata)
 
-> Lalu soal pembeli. | Lewat perantara, undername dua sampai lima juta per
-> pengiriman. || Di sini UMKM bertemu pembeli langsung.
+> Undername ke perantara: | dua sampai lima juta per pengiriman. || Di sini,
+> UMKM ketemu pembeli langsung.
 
-### 59-68 detik · `pipeline` (±23 kata)
+### 58-69 detik · `pipeline` (±28 kata)
 
-> Di belakangnya empat komponen: | RAG untuk regulasi, | scoring yang alasannya
-> bisa dibuka, | vision untuk mutu. || Satu aturan: data anomali tidak diproses
-> otomatis.
+> Di belakangnya empat komponen. | RAG untuk regulasi. | Scoring yang alasannya
+> bisa dibuka. | Vision untuk mutu. || Dan satu aturan: | data anomali tidak
+> diproses otomatis. | Manusia yang putuskan.
 
-### 68-75 detik · `qc` (±17 kata)
+### 69-75 detik · `qc` (±15 kata)
 
-> Contohnya pada mutu. | Satu batch cacat bisa membuat kontainer ditolak, |
-> sehingga vision menyaring dulu, | surveyor yang memutuskan.
+> Satu batch cacat bisa bikin satu kontainer ditolak. || Jadi vision menyaring, |
+> surveyor yang memutuskan.
 
-### 75-83 detik · `logistics` (±21 kata)
+### 75-82 detik · `logistics` (±18 kata)
 
-> Kemudian logistik: | kirim sedikit, ongkos mahal. || Digabung jadi kontainer
-> penuh, turun sekitar tiga puluh persen, | namun PEB tetap masing-masing.
+> Kirim sedikit, ongkos per kilo mahal. || Digabung jadi kontainer penuh, | turun
+> sekitar tiga puluh persen. || PEB tetap masing-masing.
 
-### 83-91 detik · `track` (±19 kata)
+### 82-89 detik · `track` (±18 kata)
 
-> Dan inilah yang sebenarnya dikejar. | Tiap pengiriman jadi rekam jejak atas
-> nama sendiri, | yang bisa dibaca lembaga keuangan.
+> Dan ini yang sebenarnya dikejar. || Tiap pengiriman jadi rekam jejak. | Atas
+> nama sendiri. || Ini yang bisa dibaca bank.
 
-### 91-99 detik · `value` (±20 kata)
+### 89-96 detik · `value` (±18 kata)
 
-> Nilainya terukur. | Lokal lima belas ribu per kilo, | FOB kisaran tiga puluh
-> lima ribu. || Acuan koperasi sejenis, | bukan hasil kami.
+> Lokal lima belas ribu per kilo. | FOB kisaran tiga puluh lima ribu. || Acuan
+> koperasi sejenis, | bukan hasil kami.
 
-### 99-105 detik · `status` (±16 kata)
+### 96-102 detik · `status` (±15 kata)
 
-> Terbuka soal posisi kami. | Antarmuka dan alurnya sudah jalan, | sementara
-> scoring dan vision masih simulasi.
+> Terbuka: antarmuka dan alurnya jalan. || Scoring dan vision masih simulasi, |
+> integrasi lembaga masih penjajakan.
 
-### 105-113 detik · `roadmap` (±19 kata)
+### 102-111 detik · `roadmap` (±23 kata)
 
-> Selanjutnya bertahap. | Dua puluh produsen dulu di Banyumas, | lalu koridor
-> kedua, lalu nasional. || Sampai UMKM Indonesia setara eksportir besar.
+> Dua puluh produsen dulu, di Banyumas. || Lalu koridor kedua. | Lalu nasional.
+> || Sampai UMKM Indonesia berdiri di meja yang sama dengan eksportir besar.
 
-### 113-120 detik · `outro` (±17 kata)
+### 111-120 detik · `outro` (±23 kata)
 
-> Yang kami cari: | konsolidator berizin, surveyor, | koperasi pendamping. ||
-> Atomic Export. | Ekspor atas nama sendiri.
+> Yang kami cari sekarang: | konsolidator berizin, | surveyor, | dan koperasi
+> pendamping. || Atomic Export. || Supaya UMKM ekspor, | atas nama sendiri.
 
 ---
 

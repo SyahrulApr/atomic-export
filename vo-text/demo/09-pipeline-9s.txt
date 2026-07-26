@@ -1,0 +1,2 @@
+Di belakangnya empat komponen: R-A-G untuk regulasi, scoring yang alasannya bisa dibuka, vision untuk mutu.
+Satu aturan: data anomali tidak diproses otomatis.
