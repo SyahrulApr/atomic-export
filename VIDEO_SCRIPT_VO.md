@@ -172,9 +172,9 @@ Revisi kelima. Semuanya soal jembatan dan kejelasan:
 
 ### 109-120 detik · `outro` (±28 kata)
 
-> Yang kami cari: konsolidator, surveyor, dan koperasi pendamping. || Karena
-> satu produsen yang berhasil ekspor sendiri, | membuka jalan bagi ribuan
-> lainnya. || Sampai produsen Indonesia setara eksportir besar.
+> Satu produsen yang berhasil ekspor atas nama sendiri, | membuka jalan bagi
+> ribuan lainnya. || Itulah yang sedang kami bangun, | sampai produsen Indonesia
+> berdiri setara eksportir besar. || Atomic Export.
 
 ---
 

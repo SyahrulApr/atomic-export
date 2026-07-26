@@ -48,7 +48,15 @@ const hasOut = /\.mp4$/i.test(last) && args.length > 3
 const OUT = path.resolve(hasOut ? last : '../video-out/FINAL-with-music.mp4')
 const MUSIC = args.slice(2, hasOut ? -1 : undefined).map((f) => path.resolve(f))
 
-const MUSIC_DB = Number(process.env.MUSIC_DB ?? -22)
+// Measured against this narration: at -20 dB with a gentle sidechain the bed
+// lands about 12 dB under the voice, which is the band where music is audible
+// without competing. The first attempt used -22 dB with threshold 0.02 and
+// ratio 12, which put it 19 dB down; since this narration has almost no pauses
+// the bed never recovered and the music was inaudible.
+const MUSIC_DB = Number(process.env.MUSIC_DB ?? -20)
+const DUCK_THRESHOLD = Number(process.env.DUCK_THRESHOLD ?? 0.05)
+const DUCK_RATIO = Number(process.env.DUCK_RATIO ?? 6)
+const DUCK_RELEASE = Number(process.env.DUCK_RELEASE ?? 300)
 const FADE = Number(process.env.MUSIC_FADE ?? 2)
 const XFADE = Number(process.env.MUSIC_XFADE ?? 3)
 const SWITCH_AT = (process.env.SWITCH_AT ?? '')
@@ -130,7 +138,7 @@ const filter = VO
       `[bed]volume=${MUSIC_DB}dB[bedq];`,
       // one copy of the voice goes to the mix, the other drives the ducking
       `[1:a]asplit=2[vo][key];`,
-      `[bedq][key]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=450[ducked];`,
+      `[bedq][key]sidechaincompress=threshold=${DUCK_THRESHOLD}:ratio=${DUCK_RATIO}:attack=20:release=${DUCK_RELEASE}[ducked];`,
       `[vo][ducked]amix=inputs=2:normalize=0:duration=first[mixed];`,
       `[mixed]loudnorm=I=${LUFS}:TP=-1.5:LRA=11[out]`,
     ].join('')
@@ -180,7 +188,10 @@ const mb = (fs.statSync(OUT).size / 1024 / 1024).toFixed(0)
 console.log(`\nwrote      ${OUT}`)
 console.log(`           ${durationOf(OUT).toFixed(2)}s  ${mb} MB`)
 console.log(`           mean ${mean} dB, puncak ${peak} dB`)
-console.log(
-  `\nDengarkan dulu. Kalau musik masih menutupi narasi:` +
-    `\n  MUSIC_DB=-26 SWITCH_AT=${SWITCH_AT.join(',') || '82'} node tools/mix-music.mjs ...`,
-)
+if (VO) {
+  console.log(
+    `\nMusik ada di sekitar 12 dB di bawah narasi. Untuk menggeser:` +
+      `\n  MUSIC_DB=-19  musik lebih terdengar` +
+      `\n  MUSIC_DB=-23  musik lebih mundur`,
+  )
+}
