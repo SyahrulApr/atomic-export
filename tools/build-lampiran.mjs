@@ -1,18 +1,23 @@
 /**
- * Builds the screenshot appendix as Markdown and as .docx.
+ * Builds the screenshot appendix as Markdown, .docx and .pdf.
  *
  *   node tools/build-lampiran.mjs [lampiranDir]
  *
  * Reads screenshots/manifest.json written by capture-pages.mjs, so the
  * numbering and titles come from the capture run rather than being retyped.
  *
- * The .docx is generated with the `docx` package rather than converted from
- * Markdown: neither pandoc nor LibreOffice is installed here, and generating
- * directly also gives control over image sizing, which matters because a
- * screenshot pasted at native pixel size overflows the page.
+ * The PDF is the actual deliverable: the submission form accepts a file only
+ * as PDF, capped at 5 MB. The docx is the editable intermediate, and is also
+ * what LibreOffice converts from.
+ *
+ * The docx is generated with the `docx` package rather than converted from
+ * Markdown, because it gives control over image sizing. A screenshot placed at
+ * native pixel size overflows an A4 page, and pandoc would need per-image
+ * width attributes in the Markdown to avoid that.
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import { execFileSync } from 'node:child_process'
 import {
   Document,
   Packer,
@@ -109,4 +114,32 @@ fs.writeFileSync(out, await Packer.toBuffer(doc))
 
 const mb = (fs.statSync(out).size / 1024 / 1024).toFixed(1)
 console.log(`docx      ${out}  ${mb} MB`)
+
+// The submission form only accepts a PDF, capped at 5 MB, so the PDF is the
+// actual deliverable and the docx is the editable intermediate.
+try {
+  execFileSync(
+    'soffice',
+    ['--headless', '--convert-to', 'pdf', '--outdir', DIR, out],
+    { stdio: ['ignore', 'ignore', 'pipe'], timeout: 300000 },
+  )
+  const pdf = path.join(DIR, 'LAMPIRAN.pdf')
+  const pdfMb = fs.statSync(pdf).size / 1024 / 1024
+  console.log(
+    `pdf       ${pdf}  ${pdfMb.toFixed(2)} MB` +
+      (pdfMb > 5 ? '  <-- LEWAT BATAS 5 MB panitia' : '  (batas 5 MB, aman)'),
+  )
+  if (pdfMb > 5) {
+    console.log(
+      '\n  Untuk memperkecil: turunkan SHOT_SCALE saat capture, misal' +
+        '\n    SHOT_SCALE=1.5 node tools/capture-pages.mjs',
+    )
+  }
+} catch (e) {
+  console.log(
+    `pdf       gagal (${String(e.message).slice(0, 80)})` +
+      `\n          jalankan manual:  soffice --headless --convert-to pdf --outdir ${DIR} ${out}`,
+  )
+}
+
 console.log(`\n${manifest.length} halaman/fitur`)
