@@ -159,7 +159,7 @@ export const SCENES: Scene[] = [
   {
     id: 'formfill',
     start: 28,
-    dur: 9,
+    dur: 8,
     kind: 'formfill',
     from: cam({ scale: 0.97, rotateY: 5 }),
     to: cam({ scale: 1.04, rotateY: -1, x: -40 }),
@@ -176,8 +176,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'copilot',
-    start: 37,
-    dur: 9,
+    start: 36,
+    dur: 10,
     kind: 'panel',
     panel: 'copilot',
     from: cam({ scale: 0.92, rotateY: -12, x: 60 }),
@@ -272,7 +272,7 @@ export const SCENES: Scene[] = [
   {
     id: 'logistics',
     start: 73,
-    dur: 9,
+    dur: 8,
     kind: 'panel',
     panel: 'logistics',
     from: cam({ scale: 0.92, rotateY: 10, x: -60 }),
@@ -292,8 +292,8 @@ export const SCENES: Scene[] = [
   /* --------------------------------- 84-98s · bukti dan hasil awal */
   {
     id: 'track',
-    start: 82,
-    dur: 7,
+    start: 81,
+    dur: 6,
     kind: 'panel',
     panel: 'track',
     from: cam({ scale: 0.88, rotateX: 12, rotateY: 8, y: 40 }),
@@ -311,8 +311,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'value',
-    start: 89,
-    dur: 7,
+    start: 87,
+    dur: 8,
     kind: 'value',
     from: cam({ scale: 1.03 }),
     to: cam({ scale: 1 }),
@@ -330,8 +330,8 @@ export const SCENES: Scene[] = [
   /* ------------------------------ 98-104s · status dan batas kesiapan */
   {
     id: 'status',
-    start: 96,
-    dur: 7,
+    start: 95,
+    dur: 6,
     kind: 'status',
     from: cam({ scale: 1.02 }),
     to: cam({ scale: 1 }),
@@ -347,7 +347,7 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'roadmap',
-    start: 103,
+    start: 101,
     dur: 8,
     kind: 'roadmap',
     from: cam({ scale: 1.03 }),
@@ -364,8 +364,8 @@ export const SCENES: Scene[] = [
   },
   {
     id: 'outro',
-    start: 111,
-    dur: 9,
+    start: 109,
+    dur: 11,
     kind: 'outro',
     from: cam({ scale: 1.08 }),
     to: cam({ scale: 1 }),

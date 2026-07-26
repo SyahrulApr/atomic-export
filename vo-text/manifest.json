@@ -45,7 +45,7 @@
     "window": "55-60s",
     "targetSeconds": 5,
     "budgetWords": 13,
-    "actualWords": 13
+    "actualWords": 15
   },
   {
     "part": "demo",
@@ -81,18 +81,18 @@
   },
   {
     "part": "demo",
-    "file": "demo/05-formfill-9s.txt",
-    "window": "28-37s",
-    "targetSeconds": 9,
-    "budgetWords": 23,
+    "file": "demo/05-formfill-8s.txt",
+    "window": "28-36s",
+    "targetSeconds": 8,
+    "budgetWords": 20,
     "actualWords": 24
   },
   {
     "part": "demo",
-    "file": "demo/06-copilot-9s.txt",
-    "window": "37-46s",
-    "targetSeconds": 9,
-    "budgetWords": 23,
+    "file": "demo/06-copilot-10s.txt",
+    "window": "36-46s",
+    "targetSeconds": 10,
+    "budgetWords": 25,
     "actualWords": 24
   },
   {
@@ -117,7 +117,7 @@
     "window": "59-65s",
     "targetSeconds": 6,
     "budgetWords": 15,
-    "actualWords": 13
+    "actualWords": 15
   },
   {
     "part": "demo",
@@ -129,50 +129,50 @@
   },
   {
     "part": "demo",
-    "file": "demo/11-logistics-9s.txt",
-    "window": "73-82s",
-    "targetSeconds": 9,
-    "budgetWords": 23,
+    "file": "demo/11-logistics-8s.txt",
+    "window": "73-81s",
+    "targetSeconds": 8,
+    "budgetWords": 20,
     "actualWords": 24
   },
   {
     "part": "demo",
-    "file": "demo/12-track-7s.txt",
-    "window": "82-89s",
-    "targetSeconds": 7,
-    "budgetWords": 18,
+    "file": "demo/12-track-6s.txt",
+    "window": "81-87s",
+    "targetSeconds": 6,
+    "budgetWords": 15,
     "actualWords": 19
   },
   {
     "part": "demo",
-    "file": "demo/13-value-7s.txt",
-    "window": "89-96s",
-    "targetSeconds": 7,
-    "budgetWords": 18,
-    "actualWords": 21
+    "file": "demo/13-value-8s.txt",
+    "window": "87-95s",
+    "targetSeconds": 8,
+    "budgetWords": 20,
+    "actualWords": 24
   },
   {
     "part": "demo",
-    "file": "demo/14-status-7s.txt",
-    "window": "96-103s",
-    "targetSeconds": 7,
-    "budgetWords": 18,
-    "actualWords": 16
+    "file": "demo/14-status-6s.txt",
+    "window": "95-101s",
+    "targetSeconds": 6,
+    "budgetWords": 15,
+    "actualWords": 18
   },
   {
     "part": "demo",
     "file": "demo/15-roadmap-8s.txt",
-    "window": "103-111s",
+    "window": "101-109s",
     "targetSeconds": 8,
     "budgetWords": 20,
-    "actualWords": 19
+    "actualWords": 21
   },
   {
     "part": "demo",
-    "file": "demo/16-outro-9s.txt",
-    "window": "111-120s",
-    "targetSeconds": 9,
-    "budgetWords": 23,
-    "actualWords": 20
+    "file": "demo/16-outro-11s.txt",
+    "window": "109-120s",
+    "targetSeconds": 11,
+    "budgetWords": 28,
+    "actualWords": 26
   }
 ]

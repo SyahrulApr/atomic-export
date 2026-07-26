@@ -106,23 +106,35 @@ for (const seg of segs) {
   const fitted = path.join(OUT, `${seg.name}.mp3`)
 
   // The engine does not return the same length twice for the same text, so a
-  // duration measured on one run is not a promise about the next. Rather than
-  // chase an exact fit, retry a segment that would need an audible correction
-  // and keep the shortest take.
+  // duration measured on one run is not a promise about the next. Retry and
+  // keep the take that lands closest to the slot.
+  //
+  // Keeping the *shortest* take, which this did at first, is wrong: it avoids
+  // tempo correction but maximises trailing silence on any segment with slack,
+  // and dead air was the other half of the complaint.
+  const cost = (d) =>
+    d > seg.target
+      ? (d / seg.target - 1) * 100 // overshoot has to be sped up
+      : (seg.target - d) * 10 // undershoot leaves silence
   let rawDur = Infinity
+  let bestCost = Infinity
   let tries = 0
   while (tries < MAX_TRIES) {
     const attempt = await tts(seg.text)
     const tmp = `${raw}.${tries}`
     fs.writeFileSync(tmp, attempt)
     const d = durationOf(tmp)
-    if (d < rawDur) {
+    if (cost(d) < bestCost) {
+      bestCost = cost(d)
       rawDur = d
       fs.copyFileSync(tmp, raw)
     }
     fs.rmSync(tmp)
     tries += 1
-    if (rawDur / seg.target <= ATEMPO_WARN) break
+    const goodEnough =
+      rawDur / seg.target <= ATEMPO_WARN &&
+      seg.target - rawDur <= SILENCE_WARN
+    if (goodEnough) break
   }
   const retried = tries > 1 ? ` (${tries} take)` : ''
 

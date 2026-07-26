@@ -65,6 +65,24 @@ const SPELL_OUT = {
   BPOM: 'Be Pe O Em',
   PLUT: 'Pe El U Te',
   QC: 'Ki Ce',
+  MVP: 'Em Ve Pe',
+}
+
+/** Acronyms that are genuinely spoken as words, so they must not be spelled. */
+const READ_AS_WORD = new Set(['IJEPA', 'SHAP', 'JAS'])
+
+/**
+ * Anything uppercase left in the output that is neither spelled nor on the
+ * read-as-word list is a pronunciation bug waiting to happen: the engine will
+ * guess, and its guesses are wrong in ways only listening catches. "AI" came
+ * back as "A Ai" this way.
+ */
+function unhandledAcronyms(text) {
+  const found = new Set()
+  for (const m of text.matchAll(/\b[A-Z]{2,}\b/g)) {
+    if (!READ_AS_WORD.has(m[0])) found.add(m[0])
+  }
+  return [...found]
 }
 
 function spellAcronyms(text) {
@@ -247,11 +265,25 @@ jadi gunakan tier berbayar supaya hak pakainya jelas.
 
 fs.writeFileSync(path.join(OUT, 'README.txt'), readme)
 
+const risky = new Set()
+for (const [, segs] of Object.entries(sections)) {
+  for (const seg of segs) unhandledAcronyms(seg.text).forEach((a) => risky.add(a))
+}
+
 console.log(`wrote ${manifest.length} segments to ${OUT}`)
 for (const m of manifest) {
   const flag = m.actualWords > m.budgetWords * 1.15 ? '  <-- OVER BUDGET' : ''
   console.log(
     `  ${m.part.padEnd(5)} ${m.window.padEnd(9)} ${String(m.actualWords).padStart(3)} kata ` +
       `(jatah ~${m.budgetWords})${flag}`,
+  )
+}
+
+if (risky.size) {
+  console.log(
+    `\nSINGKATAN BELUM DITANGANI: ${[...risky].join(', ')}` +
+      `\n  Mesin akan menebak pelafalannya. Tambahkan ke SPELL_OUT dengan nama` +
+      `\n  huruf Indonesia, masukkan ke READ_AS_WORD kalau memang dibaca sebagai` +
+      `\n  kata, atau ganti dengan kata biasa di VIDEO_SCRIPT_VO.md.`,
   )
 }

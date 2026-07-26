@@ -1,1 +1,1 @@
-Di belakangnya empat komponen AI, dengan satu aturan: data anomali tidak diproses otomatis.
+Di belakangnya empat komponen kecerdasan buatan, dengan satu aturan, yaitu data anomali tidak diproses otomatis.

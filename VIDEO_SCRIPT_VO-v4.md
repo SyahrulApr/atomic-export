@@ -76,25 +76,39 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 
 Timecode cocok satu-satu dengan `components/showcase/scenes.ts`.
 
-Revisi kelima. Semuanya soal jembatan dan kejelasan:
+Revisi keempat. Yang diperbaiki dari v3:
 
-- **`track`**: "yang sebenarnya dikejar" tidak menyebut apa. Sekarang dinamai
-  langsung: akses modal.
-- **`value`**: angka harga muncul tanpa pengantar. Sekarang didahului pertanyaan
-  "seberapa besar bedanya", sehingga angkanya menjawab sesuatu.
-- **`status`**: "Terbuka soal posisi kami" datang mendadak, dan rinciannya terlalu
-  teknis. Sekarang cukup menyebut tahapnya, tanpa memerinci modul mana.
-- **`roadmap`**: "dua puluh" tidak menyebut dua puluh apa. Sekarang jelas dua
-  puluh produsen, dan diawali "langkah berikutnya jelas".
-- **Aspirasi dipindah ke penutup.** "Sampai produsen Indonesia setara eksportir
-  besar" tidak nyambung di tengah pembahasan ekspansi; tempatnya di akhir.
-- **"AI" tidak dipakai** karena mesin membacanya "A Ai". Diganti "kecerdasan
-  buatan". Sekarang ada detektor otomatis untuk singkatan yang belum ditangani.
+- **"plus" dibaca apa adanya** oleh mesin, jadi diganti "beserta".
+- **Kalimat yang nabrak diperpanjang**: "lalu dokumennya terbentuk" jadi "lalu
+  semua dokumen yang diperlukan terbentuk".
+- **Sebab-akibat dilengkapi**: "jika kirim sedikit, ongkos per kilo mahal,
+  sementara jika digabung...", dan "oleh karena itu vision menyaring dulu, baru
+  surveyor yang memutuskan".
+- **"atas nama UMKM itu sendiri"**, bukan sekadar "atas nama UMKM".
+- **Kata "koridor" dijelaskan**: produk dan negara baru.
+- **Wording nilai diperjelas.** "Acuan koperasi sejenis, bukan hasil kami" tidak
+  jelas maksudnya; sekarang eksplisit angkanya dari koperasi lain yang sudah
+  mengekspor.
+- **Penutup diberi kalimat penyemangat**, tidak berhenti di daftar mitra.
+- **Jeda hening dicek otomatis** oleh `tools/tts-build.mjs`, bukan diperiksa
+  dengan telinga. Segmen yang audionya jauh lebih pendek dari slot-nya akan
+  dilaporkan.
+
+Dua hal yang harus dipotong supaya muat 120 detik. Narasi `pipeline` tidak lagi
+menyebut RAG, scoring, dan vision satu per satu, karena keempat kartunya sudah
+tampil di layar dan menyebutkannya mengulang yang sudah terlihat. "UMKM" juga
+tidak dieja di setiap segmen: mengejanya empat kali terasa mekanis dan memakan
+waktu, jadi hanya dipertahankan di kalimat yang memang soal nama itu.
+
+Catatan akurasi: "prototipe" dipakai untuk scoring dan vision sesuai permintaan.
+Proposal bagian 7 menyebut keduanya "simulasi", jadi salah satu perlu
+diselaraskan supaya video dan proposal tidak memakai istilah berbeda untuk hal
+yang sama.
 
 ### 0-6 detik · `intro` (±15 kata)
 
-> Produsen gula semut di Banyumas, | sanggup produksi mutu ekspor, | namun
-> belum pernah jadi eksportir.
+> Produsen gula semut di Banyumas, | sanggup produksi mutu ekspor, | namun belum
+> pernah jadi eksportir.
 
 ### 6-10 detik · `overview` (±10 kata)
 
@@ -102,27 +116,26 @@ Revisi kelima. Semuanya soal jembatan dan kejelasan:
 
 ### 10-19 detik · `readiness` (±23 kata)
 
-> Kami mulai dari diagnosis. | Kesiapan ekspornya dinilai nol sampai seratus.
-> || Produsen ini dapat delapan puluh dua, | beserta daftar yang masih
-> menahannya.
+> Kami mulai dari diagnosis. | Kesiapan ekspornya dinilai nol sampai seratus. ||
+> Produsen ini dapat delapan puluh dua, | beserta daftar yang masih menahannya.
 
 ### 19-28 detik · `atomic` (±23 kata)
 
-> Nah, daftar itu langsung dikerjakan. | Sebab cuma seperempat peserta
-> pelatihan ekspor yang benar-benar mengekspor, | sehingga birokrasi dipecah
-> jadi tugas lima belas menit.
+> Nah, daftar itu langsung dikerjakan. | Sebab cuma seperempat peserta pelatihan
+> ekspor yang benar-benar mengekspor, | sehingga birokrasi dipecah jadi tugas lima
+> belas menit.
 
-### 28-36 detik · `formfill` (±20 kata)
+### 28-37 detik · `formfill` (±23 kata)
 
 > Kemudian yang paling melelahkan. | Bukan mengirim barang, | melainkan mengisi
-> data yang sama berulang kali. || Di sini sekali isi, | lalu semua dokumen
-> yang diperlukan terbentuk.
+> data yang sama berulang kali. || Di sini sekali isi, | lalu semua dokumen yang
+> diperlukan terbentuk.
 
-### 36-46 detik · `copilot` (±25 kata)
+### 37-46 detik · `copilot` (±23 kata)
 
-> Lalu soal aturan. | Regulasi tiap negara berbeda dan sering berubah, |
-> sehingga salah tafsir bisa membuat barang tertahan. || Karena itu setiap
-> jawaban disertai sitasi sumbernya.
+> Lalu soal aturan. | Regulasi tiap negara berbeda dan sering berubah, | sehingga
+> salah tafsir bisa membuat barang tertahan. || Karena itu setiap jawaban disertai
+> sitasi sumbernya.
 
 ### 46-51 detik · `documents` (±13 kata)
 
@@ -130,51 +143,49 @@ Revisi kelima. Semuanya soal jembatan dan kejelasan:
 
 ### 51-59 detik · `market` (±20 kata)
 
-> Lalu soal pembeli. | Lewat perantara, undername dapat mencapai dua sampai
-> lima juta per pengiriman. || Tapi di sini produsen bertemu pembeli langsung.
+> Lalu soal pembeli. | Lewat perantara, undername dapat mencapai dua sampai lima
+> juta per pengiriman. || Tapi di sini produsen bertemu pembeli langsung.
 
 ### 59-65 detik · `pipeline` (±15 kata)
 
-> Di belakangnya empat komponen kecerdasan buatan, | dengan satu aturan, |
-> yaitu data anomali tidak diproses otomatis.
+> Di belakangnya empat komponen kecerdasan buatan, | dengan satu aturan: | data
+> anomali tidak diproses otomatis.
 
 ### 65-73 detik · `qc` (±20 kata)
 
-> Contohnya pada mutu. | Satu batch cacat bisa membuat kontainer ditolak, |
-> oleh karena itu vision menyaring dulu, | baru surveyor yang memutuskan.
+> Contohnya pada mutu. | Satu batch cacat bisa membuat kontainer ditolak, | oleh
+> karena itu vision menyaring dulu, | baru surveyor yang memutuskan.
 
-### 73-81 detik · `logistics` (±20 kata)
+### 73-82 detik · `logistics` (±23 kata)
 
 > Kemudian logistik. | Jika kirim sedikit, ongkos per kilo mahal, | sementara
 > digabung jadi kontainer penuh turun sekitar tiga puluh persen. | PEB tetap
 > masing-masing.
 
-### 81-87 detik · `track` (±15 kata)
+### 82-89 detik · `track` (±18 kata)
 
-> Dan inilah tujuan akhirnya: | akses modal. || Setiap pengiriman jadi rekam
-> jejak atas nama sendiri, | dan itu yang dibaca bank.
+> Dan inilah yang sebenarnya dikejar. | Setiap pengiriman menjadi rekam jejak atas
+> nama sendiri, | dan itulah yang dibaca lembaga keuangan.
 
-### 87-95 detik · `value` (±20 kata)
+### 89-96 detik · `value` (±18 kata)
 
-> Lalu seberapa besar bedanya? || Lokal lima belas ribu per kilo, | ekspor bisa
-> kisaran tiga puluh lima ribu. || Itu angka koperasi lain yang sudah
-> mengekspor.
+> Lokal lima belas ribu per kilo, | sementara harga ekspor kisaran tiga puluh lima
+> ribu. || Angka dari koperasi lain yang sudah mengekspor.
 
-### 95-101 detik · `status` (±15 kata)
+### 96-103 detik · `status` (±18 kata)
 
-> Di mana posisi kami sekarang? || Alur lengkapnya sudah berjalan, | sebagian
-> modelnya masih prototipe, | menuju siap pakai di pilot.
+> Terbuka soal posisi kami. | Antarmuka dan alurnya sudah jalan, | sementara
+> scoring dan vision masih tahap prototipe.
 
-### 101-109 detik · `roadmap` (±20 kata)
+### 103-111 detik · `roadmap` (±20 kata)
 
-> Langkah berikutnya jelas. || Mulai dari dua puluh produsen di Banyumas, |
-> lalu koridor baru: produk dan negara tujuan lain, | lalu skala nasional.
+> Dua puluh produsen dulu di Banyumas, | lalu koridor berikutnya: | produk dan
+> negara baru. || Sampai produsen Indonesia setara eksportir besar.
 
-### 109-120 detik · `outro` (±28 kata)
+### 111-120 detik · `outro` (±23 kata)
 
-> Yang kami cari: konsolidator, surveyor, dan koperasi pendamping. || Karena
-> satu produsen yang berhasil ekspor sendiri, | membuka jalan bagi ribuan
-> lainnya. || Sampai produsen Indonesia setara eksportir besar.
+> Yang kami cari: konsolidator, surveyor, dan koperasi pendamping. || Karena satu
+> produsen yang berhasil ekspor sendiri, | membuka jalan bagi ribuan lainnya.
 
 ---
 
