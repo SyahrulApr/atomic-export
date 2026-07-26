@@ -1,0 +1,1 @@
+Di belakangnya empat komponen AI, dengan satu aturan: data anomali tidak diproses otomatis.

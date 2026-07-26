@@ -1,41 +1,38 @@
-Produsen gula semut di Banyumas. Sanggup produksi mutu ekspor, namun belum pernah jadi eksportir.
+Produsen gula semut di Banyumas, sanggup produksi mutu ekspor, namun belum pernah jadi eksportir.
 
 Yang menghalangi bukan mutunya, melainkan birokrasi dan perantara.
 
 Kami mulai dari diagnosis. Kesiapan ekspornya dinilai nol sampai seratus.
-Produsen ini dapat delapan puluh dua, plus daftar yang masih menahannya.
+Produsen ini dapat delapan puluh dua, beserta daftar yang masih menahannya.
 
-Nah, daftar itu tidak dibiarkan menumpuk. Sebab cuma seperempat peserta pelatihan ekspor yang benar-benar mengekspor.
-Jadi birokrasinya dipecah jadi tugas lima belas menit.
+Nah, daftar itu langsung dikerjakan. Sebab cuma seperempat peserta pelatihan ekspor yang benar-benar mengekspor, sehingga birokrasi dipecah jadi tugas lima belas menit.
 
-Kemudian bagian yang paling melelahkan. Bukan mengirim barang, melainkan mengisi data yang sama berulang kali.
-Di sini cukup sekali isi, lalu dokumennya terbentuk.
+Kemudian yang paling melelahkan. Bukan mengirim barang, melainkan mengisi data yang sama berulang kali.
+Di sini sekali isi, lalu semua dokumen yang diperlukan terbentuk.
 
-Setelah itu muncul soal aturan. Regulasi tiap negara berbeda dan sering berubah, sehingga salah tafsir bisa membuat barang tertahan.
-Karena itu tiap jawaban di sini membawa sitasi.
+Lalu soal aturan. Regulasi tiap negara berbeda dan sering berubah, sehingga salah tafsir bisa membuat barang tertahan.
+Karena itu setiap jawaban disertai sitasi sumbernya.
 
-Hasilnya, semua dokumen terbit atas nama U-M-K-M, bukan atas nama perantara.
+Hasilnya, semua dokumen terbit atas nama U Em Ka Em itu sendiri, bukan perantara.
 
-Lalu soal pembeli. Lewat perantara, undername dua sampai lima juta per pengiriman.
-Di sini U-M-K-M bertemu pembeli langsung.
+Lalu soal pembeli. Lewat perantara, undername dapat mencapai dua sampai lima juta per pengiriman.
+Tapi di sini produsen bertemu pembeli langsung.
 
-Di belakangnya empat komponen: R-A-G untuk regulasi, scoring yang alasannya bisa dibuka, vision untuk mutu.
-Satu aturan: data anomali tidak diproses otomatis.
+Di belakangnya empat komponen AI, dengan satu aturan: data anomali tidak diproses otomatis.
 
-Contohnya pada mutu. Satu batch cacat bisa membuat kontainer ditolak, sehingga vision menyaring dulu, surveyor yang memutuskan.
+Contohnya pada mutu. Satu batch cacat bisa membuat kontainer ditolak, oleh karena itu vision menyaring dulu, baru surveyor yang memutuskan.
 
-Kemudian logistik: kirim sedikit, ongkos mahal.
-Digabung jadi kontainer penuh, turun sekitar tiga puluh persen, namun P-E-B tetap masing-masing.
+Kemudian logistik. Jika kirim sedikit, ongkos per kilo mahal, sementara digabung jadi kontainer penuh turun sekitar tiga puluh persen. Pe E Be tetap masing-masing.
 
-Dan inilah yang sebenarnya dikejar. Tiap pengiriman jadi rekam jejak atas nama sendiri, yang bisa dibaca lembaga keuangan.
+Dan inilah yang sebenarnya dikejar. Setiap pengiriman menjadi rekam jejak atas nama sendiri, dan itulah yang dibaca lembaga keuangan.
 
-Nilainya terukur. Lokal lima belas ribu per kilo, F-O-B kisaran tiga puluh lima ribu.
-Acuan koperasi sejenis, bukan hasil kami.
+Lokal lima belas ribu per kilo, sementara harga ekspor kisaran tiga puluh lima ribu.
+Angka dari koperasi lain yang sudah mengekspor.
 
-Terbuka soal posisi kami. Antarmuka dan alurnya sudah jalan, sementara scoring dan vision masih simulasi.
+Terbuka soal posisi kami. Antarmuka dan alurnya sudah jalan, sementara scoring dan vision masih tahap prototipe.
 
-Selanjutnya bertahap. Dua puluh produsen dulu di Banyumas, lalu koridor kedua, lalu nasional.
-Sampai U-M-K-M Indonesia setara eksportir besar.
+Dua puluh produsen dulu di Banyumas, lalu koridor berikutnya: produk dan negara baru.
+Sampai produsen Indonesia setara eksportir besar.
 
-Yang kami cari: konsolidator berizin, surveyor, koperasi pendamping.
-Atomic Export. Ekspor atas nama sendiri.
+Yang kami cari: konsolidator, surveyor, dan koperasi pendamping.
+Karena satu produsen yang berhasil ekspor sendiri, membuka jalan bagi ribuan lainnya.

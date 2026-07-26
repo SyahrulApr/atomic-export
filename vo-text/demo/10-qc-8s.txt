@@ -1,0 +1,1 @@
+Contohnya pada mutu. Satu batch cacat bisa membuat kontainer ditolak, oleh karena itu vision menyaring dulu, baru surveyor yang memutuskan.

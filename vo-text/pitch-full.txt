@@ -1,15 +1,15 @@
 Kami Tetra Core.
-Atomic Export, sistem operasi ekspor untuk U-M-K-M yang belum pernah ekspor sendiri.
+Atomic Export, sistem operasi ekspor untuk U Em Ka Em yang belum pernah ekspor sendiri.
 
-Produsen kecil sudah mampu berproduksi. Tapi sembilan puluh enam persen ekspor U-M-K-M lewat perantara.
+Produsen kecil sudah mampu berproduksi. Tapi sembilan puluh enam persen ekspor U Em Ka Em lewat perantara.
 Nama mereka hilang dari dokumen. Margin terpotong, dan bank tidak pernah melihat mereka.
 
 Ambil satu produsen gula semut di Cilongok, Banyumas.
 Platform kami memberi skor kesiapan ekspor beserta faktor penekannya. Birokrasi dipecah jadi tugas di bawah lima belas menit.
 Copilot menjawab pertanyaan regulasi dengan sitasi resmi. Satu kali input menghasilkan enam dokumen.
-Kargo digabung jadi kontainer penuh, tapi P-E-B tetap atas nama sendiri.
+Kargo digabung jadi kontainer penuh, tapi Pe E Be tetap atas nama sendiri.
 
-Di belakangnya empat komponen: R-A-G untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
+Di belakangnya empat komponen: Er A Ge untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
 Setiap keluaran bisa ditelusuri penggunanya.
 
 Dampaknya konkret.

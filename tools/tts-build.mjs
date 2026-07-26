@@ -31,6 +31,8 @@ const VOICE = process.argv[3] ?? process.env.TTS_VOICE_ID ?? 'nPczCjzI2devNBz1zQ
 const MODEL = process.env.TTS_MODEL ?? 'eleven_multilingual_v2'
 const SPEED = Number(process.env.TTS_SPEED ?? 1.2) // 0.7-1.2 accepted
 const ATEMPO_WARN = 1.08
+// trailing silence a viewer starts to notice
+const SILENCE_WARN = 0.9
 
 const SRC = path.resolve('vo-text', PART)
 const OUT = path.resolve('vo-out', PART)
@@ -149,13 +151,20 @@ for (const seg of segs) {
     atempo: Number(tempo.toFixed(4)),
     finalSeconds: Number(finalDur.toFixed(2)),
     chars: seg.text.length,
+    silenceSeconds: Number((seg.target - finalDur).toFixed(2)),
   })
 
-  const flag = tempo > ATEMPO_WARN ? '  <-- atempo tinggi, pertimbangkan potong teks' : ''
+  // Trailing silence: the scene keeps playing after the narration stops. A
+  // little is breathing room, a lot reads as dead air.
+  const gap = seg.target - finalDur
+  const flags = []
+  if (tempo > ATEMPO_WARN) flags.push('atempo tinggi, potong teks')
+  if (gap > SILENCE_WARN) flags.push(`HENING ${gap.toFixed(1)}s, tambah teks atau pendekkan scene`)
+  const flag = flags.length ? `  <-- ${flags.join(' + ')}` : ''
   console.log(
     `  ${seg.name.padEnd(26)} ${String(seg.target).padStart(3)}s  ` +
       `mentah ${rawDur.toFixed(2).padStart(6)}s  atempo ${tempo.toFixed(3)}  ` +
-      `jadi ${finalDur.toFixed(2)}s${retried}${flag}`,
+      `hening ${gap.toFixed(2).padStart(5)}s${retried}${flag}`,
   )
 }
 
@@ -197,7 +206,13 @@ fs.writeFileSync(
 const totalRaw = report.reduce((a, r) => a + r.rawSeconds, 0)
 const totalTarget = report.reduce((a, r) => a + r.target, 0)
 const worst = report.reduce((a, r) => (r.atempo > a.atempo ? r : a))
+const gaps = report.map((r) => ({ ...r, gap: r.target - r.finalSeconds }))
+const worstGap = gaps.reduce((a, r) => (r.gap > a.gap ? r : a))
 
 console.log(`\ntrack   ${path.relative(process.cwd(), track)}  ${durationOf(track).toFixed(2)}s`)
 console.log(`mentah  ${totalRaw.toFixed(1)}s vs ruang video ${totalTarget}s`)
 console.log(`atempo tertinggi  ${worst.atempo} pada ${worst.name}`)
+console.log(
+  `hening terpanjang ${worstGap.gap.toFixed(2)}s pada ${worstGap.name}` +
+    (worstGap.gap > SILENCE_WARN ? '  <-- perlu diperbaiki' : ''),
+)

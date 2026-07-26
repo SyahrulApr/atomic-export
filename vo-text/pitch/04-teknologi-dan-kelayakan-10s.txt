@@ -1,2 +1,2 @@
-Di belakangnya empat komponen: R-A-G untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
+Di belakangnya empat komponen: Er A Ge untuk regulasi, scoring interpretable dengan SHAP, computer vision untuk mutu, dan pencocokan pembeli.
 Setiap keluaran bisa ditelusuri penggunanya.

@@ -38,8 +38,11 @@ function cleanLabel(raw) {
 }
 
 /**
- * Acronyms an engine will otherwise read as a single word. Written out with
- * Indonesian letter names so they are spelled aloud instead.
+ * Acronyms an engine will otherwise read as a single word.
+ *
+ * Hyphenated forms like "P-E-B" are not enough: the engine falls back on
+ * English letter names and says "pi ee bee". Writing the Indonesian letter
+ * names phonetically is what actually produces "pe e be".
  *
  * Only applied to the generated .txt; the markdown keeps "UMKM" so it stays
  * readable for a human narrator.
@@ -48,20 +51,20 @@ function cleanLabel(raw) {
  * are deliberately absent.
  */
 const SPELL_OUT = {
-  UMKM: 'U-M-K-M',
-  PEB: 'P-E-B',
-  RAG: 'R-A-G',
-  HS: 'H-S',
-  FOB: 'F-O-B',
-  COO: 'C-O-O',
-  FCL: 'F-C-L',
-  LCL: 'L-C-L',
-  PKBE: 'P-K-B-E',
-  NIB: 'N-I-B',
-  INSW: 'I-N-S-W',
-  BPOM: 'B-P-O-M',
-  QC: 'Q-C',
-  PLUT: 'P-L-U-T',
+  UMKM: 'U Em Ka Em',
+  PEB: 'Pe E Be',
+  RAG: 'Er A Ge',
+  HS: 'Ha Es',
+  FOB: 'Ef O Be',
+  COO: 'Ce O O',
+  FCL: 'Ef Ce El',
+  LCL: 'El Ce El',
+  PKBE: 'Pe Ka Be E',
+  NIB: 'En I Be',
+  INSW: 'I En Es We',
+  BPOM: 'Be Pe O Em',
+  PLUT: 'Pe El U Te',
+  QC: 'Ki Ce',
 }
 
 function spellAcronyms(text) {

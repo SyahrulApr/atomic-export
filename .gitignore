@@ -24,3 +24,5 @@ video-out/
 # Generated narration audio, rebuild with tools/tts-build.mjs
 vo-out/
 vo-out-v1/
+
+vo-out-steven-v4/
