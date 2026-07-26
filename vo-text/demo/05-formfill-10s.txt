@@ -1,0 +1,3 @@
+Perhatikan bagian ini.
+Data transaksi diisi satu kali saja. Produk, pos tarif, kuantitas, harga, pembeli.
+Sekali tekan, enam dokumen perdagangan langsung terbentuk.

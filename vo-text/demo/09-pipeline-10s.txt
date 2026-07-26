@@ -1,0 +1,3 @@
+Ini yang terjadi di belakang layar.
+Profil, spesifikasi, foto produk, dan pertanyaan regulasi masuk sebagai input.
+Satu prinsip berlaku di semuanya: data anomali ditandai untuk ditinjau manusia.

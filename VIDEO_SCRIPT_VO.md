@@ -36,8 +36,8 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 
 ### 0-5 detik · Hook (±13 kata)
 
-> Kami Tetra Core. || Atomic Export. | Sistem operasi ekspor untuk UMKM yang belum
-> pernah ekspor atas nama sendiri.
+> Kami Tetra Core. || Atomic Export, | sistem operasi ekspor untuk UMKM yang belum
+> pernah ekspor sendiri.
 
 ### 5-15 detik · Pengguna dan masalah (±25 kata)
 
@@ -48,11 +48,10 @@ Visual: talking head atau kombinasi talking head dengan potongan dashboard.
 ### 15-35 detik · Use case dan alur (±50 kata)
 
 > Ambil satu produsen gula semut di Cilongok, Banyumas. || Platform kami memberi
-> dia skor kesiapan ekspor lengkap dengan faktor penekannya. | Birokrasi dipecah
-> jadi tugas mikro di bawah lima belas menit. || AI Copilot menjawab pertanyaan
-> regulasi dengan sitasi dokumen resmi. | Satu kali input data menghasilkan enam
-> dokumen perdagangan. || Lalu kargonya digabung jadi kontainer penuh, tapi PEB
-> tetap atas namanya sendiri.
+> skor kesiapan ekspor beserta faktor penekannya. | Birokrasi dipecah jadi tugas
+> di bawah lima belas menit. || Copilot menjawab pertanyaan regulasi dengan
+> sitasi resmi. | Satu kali input menghasilkan enam dokumen. || Kargo digabung
+> jadi kontainer penuh, tapi PEB tetap atas nama sendiri.
 
 ### 35-45 detik · Teknologi dan kelayakan (±25 kata)
 

@@ -1,0 +1,2 @@
+Terbuka soal posisi kami.
+Antarmuka dan alurnya berjalan. Scoring dan computer vision masih simulasi.
