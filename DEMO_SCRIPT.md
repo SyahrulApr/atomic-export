@@ -45,7 +45,7 @@ Solusi kami enam tahap: dari **Frictionless Execution** di Tahap 1 — birokrasi
 
 ### Hybrid Intelligence Architecture
 
-Delapan modul teknologi dalam satu platform: Atomic Engine, RAG Chatbot, Export Readiness Score berbasis LightGBM, otomasi dokumen single-entry, QC Computer Vision, P2P2B matchmaking, konsolidasi LCL ke FCL, dan Digital Track Record untuk bankability.
+Delapan modul teknologi dalam satu platform: Atomic Engine, RAG Chatbot, Export Readiness Score berbasis rubrik berbobot transparan, otomasi dokumen single-entry, QC Computer Vision, P2P2B matchmaking, konsolidasi LCL ke FCL, dan Digital Track Record untuk bankability.
 
 `[Scroll ke bawah]`
 
@@ -53,7 +53,7 @@ Delapan modul teknologi dalam satu platform: Atomic Engine, RAG Chatbot, Export 
 
 ### Impact Scale
 
-Empat angka target dampak: **61%** PDB dari UMKM yang siap dimaksimalkan, **25,9%** baseline konversi ke eksportir aktif, **minus 43%** biaya logistik via konsolidasi FCL, dan **Rp 2.527 triliun** undisbursed loan yang bisa terbuka.
+Empat angka target dampak: **60,5%** PDB dari UMKM yang siap dimaksimalkan, **91,3%** UMKM produsen ekspor masih bergantung perantara, **minus 30%** biaya logistik via konsolidasi FCL, dan **Rp 2.527 triliun** undisbursed loan yang menunjukkan persoalan intermediasi perbankan.
 
 `[Scroll ke bawah]`
 
@@ -195,7 +195,7 @@ Input pertanyaan sesuai persis dengan output jawaban yang tersedia di menu Dokum
 
 `[Panel berpindah ke Readiness Score]`
 
-Skor kesiapan ekspor **82 dari 100** dihasilkan oleh model **LightGBM** yang dilatih dari data histori ekspor UMKM dan profil kepatuhan.
+Skor kesiapan ekspor **82 dari 100** dihasilkan oleh rubrik berbobot transparan dari data legalitas, spesifikasi produk, kapasitas, dan rekam jejak Atomic Steps.
 
 Angka 82 bukan kualitatif — ini prediksi probabilistik bahwa UMKM ini akan berhasil menyelesaikan siklus ekspor mandiri. Di atas 80 adalah ambang batas yang kami tetapkan sebagai *export-ready*.
 

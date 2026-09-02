@@ -274,7 +274,7 @@ function Problem() {
     {
       icon: Layers,
       title: 'Friction Kognitif & Administratif',
-      desc: 'Prosedur ekspor non-linear & dokumen manual menciptakan execution gap. Hanya 25,9% pelatihan jadi eksportir aktif.',
+      desc: 'Prosedur ekspor non-linear & dokumen manual menciptakan execution gap. 91,3% UMKM produsen ekspor masih bergantung perantara, hanya 8,7% ekspor mandiri.',
     },
     {
       icon: TrendingUp,
@@ -469,13 +469,13 @@ function Features() {
     {
       icon: Bot,
       title: 'RAG Chatbot',
-      desc: 'Domain-specific RAG: FAISS + all-MiniLM-L6-v2 + LLM atas korpus regulasi kepabeanan. Panduan actionable bersitasi sumber.',
+      desc: 'AI Copilot menjawab regulasi ekspor dari korpus dokumen kepabeanan terkurasi, lengkap dengan sitasi sumber resmi.',
       tag: 'Semantic Retrieval',
     },
     {
       icon: Gauge,
       title: 'Export Readiness Score',
-      desc: 'LightGBM gradient boosting + SHAP pada 4 dimensi: legalitas, spek produk, kapasitas, rekam jejak Atomic Steps.',
+      desc: 'Rubrik berbobot transparan pada 4 dimensi: legalitas, spek produk, kapasitas, rekam jejak Atomic Steps.',
       tag: 'Behavioral Scoring',
     },
     {
@@ -571,7 +571,7 @@ function Features() {
 function Impact() {
   const stats = [
     { value: '61%', label: 'Kontribusi UMKM terhadap PDB nasional' },
-    { value: '25,9%', label: 'Baseline konversi edukasi ke eksportir aktif' },
+    { value: '91,3%', label: 'UMKM produsen ekspor masih bergantung perantara' },
     { value: '−30%', label: 'Potensi penurunan biaya logistik per unit' },
     { value: 'Rp2.527T', label: 'Undisbursed loan yang bisa terbuka' },
   ]
@@ -648,18 +648,18 @@ function Architecture() {
     },
     {
       icon: Boxes,
-      title: 'Microservices',
-      desc: 'FastAPI async: atomic-engine, rag, document, scoring, matching, cv.',
+      title: 'Backend',
+      desc: 'API terintegrasi untuk RAG, dokumen, dan scoring.',
     },
     {
       icon: Sparkles,
       title: 'AI Intelligence Core',
-      desc: 'RAG (FAISS+Mistral-7B), LightGBM+SHAP, EfficientNet-B4 pipeline.',
+      desc: 'RAG untuk regulasi ekspor, rubrik Readiness Score berbobot transparan.',
     },
     {
       icon: ShieldCheck,
       title: 'Unified Data Layer',
-      desc: 'PostgreSQL, FAISS/Chroma, Redis, Behavioral Log Store (credit scoring).',
+      desc: 'PostgreSQL, Redis, Behavioral Log Store (credit scoring).',
     },
   ]
   return (

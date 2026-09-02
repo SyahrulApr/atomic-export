@@ -531,12 +531,12 @@ export function CopilotPanel({ replay = false }: { replay?: boolean }) {
           <div>
             <p className="text-sm font-semibold">AI Copilot Ekspor</p>
             <p className="text-xs text-muted-foreground">
-              RAG · FAISS + sentence-transformers + LLM
+              RAG atas korpus regulasi terkurasi
             </p>
           </div>
-          <span className="ml-auto flex items-center gap-1.5 text-xs text-success">
-            <span className="h-2 w-2 animate-pulse-dot rounded-full bg-success" />
-            Online
+          <span className="ml-auto flex items-center gap-1.5 text-xs text-warning">
+            <span className="h-2 w-2 rounded-full bg-warning" />
+            Prototipe
           </span>
         </div>
 
@@ -672,7 +672,7 @@ export function ReadinessPanel() {
           </div>
           <p className="mt-3 font-semibold">Siap Ekspor</p>
           <p className="text-xs text-muted-foreground">
-            LightGBM · interpretable (SHAP)
+            Rubrik berbobot · transparan
           </p>
           <Pill tone="success">
             <TrendingUp className="h-3 w-3" /> +14 dari kohort
