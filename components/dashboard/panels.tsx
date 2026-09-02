@@ -470,7 +470,41 @@ export function CopilotPanel({ replay = false }: { replay?: boolean }) {
   const [msgs, setMsgs] = useState<ChatMsg[]>(shouldReplay ? [] : chat)
   const [draft, setDraft] = useState('')
   const [thinking, setThinking] = useState(false)
+  const [liveInput, setLiveInput] = useState('')
+  const [liveError, setLiveError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  async function handleAsk() {
+    const question = liveInput.trim()
+    if (!question || thinking) return
+    setLiveInput('')
+    setLiveError(null)
+    setMsgs((p) => [...p, { role: 'user', text: question }])
+    setThinking(true)
+    try {
+      const res = await fetch('/api/copilot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Gagal memproses pertanyaan.')
+      setMsgs((p) => [
+        ...p,
+        {
+          role: 'bot',
+          text: data.answer,
+          sources: (data.sources ?? []).map((s: { title: string }) => s.title),
+        },
+      ])
+    } catch (err) {
+      setLiveError(
+        err instanceof Error ? err.message : 'Gagal terhubung ke Copilot.',
+      )
+    } finally {
+      setThinking(false)
+    }
+  }
 
   // auto-scroll on new content
   useEffect(() => {
@@ -610,17 +644,33 @@ export function CopilotPanel({ replay = false }: { replay?: boolean }) {
         </div>
 
         <div className="border-t border-border p-4">
+          {liveError && (
+            <p className="mb-2 text-xs text-destructive">{liveError}</p>
+          )}
           <div className="flex items-center gap-2 rounded-xl border border-border bg-background px-4 py-3">
             <input
-              readOnly
-              value={draft}
-              placeholder="Tanya regulasi ekspor… (demo)"
-              className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/60"
+              readOnly={shouldReplay}
+              value={shouldReplay ? draft : liveInput}
+              onChange={(e) => setLiveInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !shouldReplay) handleAsk()
+              }}
+              disabled={thinking}
+              placeholder={
+                shouldReplay
+                  ? 'Tanya regulasi ekspor… (demo)'
+                  : 'Tanya regulasi ekspor ke Copilot…'
+              }
+              className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/60 disabled:opacity-60"
             />
-            {draft && (
+            {shouldReplay && draft && (
               <span className="inline-block h-4 w-px animate-pulse-dot bg-primary" />
             )}
-            <button className="grid h-8 w-8 place-items-center rounded-lg gradient-brand text-white">
+            <button
+              onClick={handleAsk}
+              disabled={shouldReplay || thinking || !liveInput.trim()}
+              className="grid h-8 w-8 place-items-center rounded-lg gradient-brand text-white disabled:opacity-40"
+            >
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>

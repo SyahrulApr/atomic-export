@@ -76,7 +76,7 @@ export const TOUR_STEPS: TourStep[] = [
     panel: 'readiness',
     target: '[data-tour="ready-shap"]',
     stage: 'Scoring',
-    title: 'Transparan via SHAP',
+    title: 'Transparan, Bukan Kotak Hitam',
     desc: 'Faktor mana yang menaikkan dan menurunkan skor ditampilkan jelas, bukan kotak hitam.',
   },
   {
