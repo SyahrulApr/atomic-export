@@ -8,6 +8,10 @@ import { db } from '../lib/db/client'
 import { ragChunks, ragDocuments } from '../lib/db/schema'
 import { chunkText } from '../lib/rag/chunk'
 
+try {
+  process.loadEnvFile('.env.local')
+} catch {}
+
 const CORPUS_DIR = path.join(process.cwd(), 'corpus', 'regulasi')
 const EMBEDDING_MODEL = 'text-embedding-3-small'
 const EMBED_BATCH_SIZE = 64

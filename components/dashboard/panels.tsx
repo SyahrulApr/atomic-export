@@ -1361,10 +1361,17 @@ export function TrackRecordPanel() {
               </div>
             ))}
           </div>
-          <button className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl gradient-brand py-3 text-sm font-medium text-white shadow-accent transition-all hover:shadow-accent-lg hover:brightness-110">
+          <button
+            disabled
+            title="Integrasi lembaga keuangan mitra masih tahap penjajakan kemitraan"
+            className="mt-5 flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-border bg-muted/50 py-3 text-sm font-medium text-muted-foreground"
+          >
             Ajukan ke Lembaga Keuangan
-            <ArrowRight className="h-4 w-4" />
+            <Pill tone="warning">Rencana</Pill>
           </button>
+          <p className="mt-2 text-center text-[11px] text-muted-foreground">
+            Rekam jejak sudah terbentuk. Integrasi pengajuan langsung ke mitra pembiayaan masih tahap penjajakan.
+          </p>
         </Card>
       </div>
 

@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: atomic
+      POSTGRES_PASSWORD: atomic
+      POSTGRES_DB: atomic_export
+    ports:
+      - '55432:5432'
+    volumes:
+      - atomic_export_pgdata:/var/lib/postgresql/data
+
+volumes:
+  atomic_export_pgdata:

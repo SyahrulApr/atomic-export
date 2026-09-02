@@ -1,5 +1,9 @@
 import postgres from 'postgres'
 
+try {
+  process.loadEnvFile('.env.local')
+} catch {}
+
 async function main() {
   const connectionString = process.env.DATABASE_URL
   if (!connectionString) {
