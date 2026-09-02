@@ -91,7 +91,7 @@ Semua yang baru kita lihat terwujud dalam satu dashboard interaktif. Mari kita m
 
 Platform ini dilindungi akses. Hanya mitra UMKM terverifikasi yang bisa masuk.
 
-Kita akan masuk sebagai **Koperasi Kopi Gayo** dari Aceh Tengah — salah satu UMKM pilot dalam koridor ekspor kopi arabika ke Tokyo, Jepang.
+Kita akan masuk sebagai **Koperasi Gula Semut Langgongsari** dari Banyumas, Jawa Tengah — salah satu UMKM pilot dalam koridor ekspor gula semut kelapa ke Osaka, Jepang.
 
 `[Ketik username: tetracore]`
 
@@ -113,7 +113,7 @@ Sistem memverifikasi identitas, lalu mengarahkan kita langsung ke dashboard.
 
 ### Langkah 1 — Selamat datang di Atomic Export
 
-Di sini kita berada di **Beranda** Atomic Export. Sebagai contoh, kita gunakan skenario **Kopi Arabika Gayo ke Tokyo, Jepang** — ini adalah ilustrasi konkret bagaimana UMKM kopi akan menggunakan platform kami dari awal hingga layak modal.
+Di sini kita berada di **Beranda** Atomic Export. Sebagai contoh, kita gunakan skenario **Gula Semut Kelapa Banyumas ke Osaka, Jepang** — ini adalah ilustrasi konkret bagaimana UMKM akan menggunakan platform kami dari awal hingga layak modal.
 
 Dari layar ini, UMKM bisa memantau seluruh perjalanan ekspor mereka dalam satu tampilan.
 
@@ -125,7 +125,7 @@ Dari layar ini, UMKM bisa memantau seluruh perjalanan ekspor mereka dalam satu t
 
 Perhatikan empat angka di atas ini.
 
-**Export Readiness Score: 82 dari 100.** Ini berarti Koperasi Kopi Gayo sudah siap ekspor secara mandiri. **18 dari 24 Atomic Steps** sudah diselesaikan. Margin yang berhasil dipertahankan dibanding jika melalui agregator: **plus 34 persen**. Dan yang paling penting — **3 PEB sudah diterbitkan atas nama UMKM sendiri**, bukan atas nama perantara.
+**Export Readiness Score: 82 dari 100.** Ini berarti Koperasi Gula Semut Langgongsari sudah siap ekspor secara mandiri. **18 dari 24 Atomic Steps** sudah diselesaikan. Margin yang berhasil dipertahankan dibanding jika melalui agregator: **plus 34 persen**. Dan yang paling penting — **3 PEB sudah diterbitkan atas nama UMKM sendiri**, bukan atas nama perantara.
 
 Ini bukan angka dekorasi. Ini adalah fondasi bankability.
 
@@ -151,7 +151,7 @@ Inilah inovasi utama Tahap 1.
 
 Birokrasi ekspor — yang biasanya memakan waktu berbulan-bulan dan membingungkan — kami pecah menjadi **tugas-tugas mikro yang masing-masing bisa diselesaikan dalam kurang dari 15 menit**. Setiap tugas memberi XP. Setiap hari konsisten memberi streak. Sistem gamifikasi ini bukan gimmick — ini adalah mekanisme kepatuhan berbasis perilaku.
 
-Koperasi Kopi Gayo saat ini di **Level 7** dengan **12 hari beruntun** tanpa putus. Total **2.450 XP** sudah terkumpul dari target 3.000.
+Koperasi Gula Semut Langgongsari saat ini di **Level 7** dengan **12 hari beruntun** tanpa putus. Total **2.450 XP** sudah terkumpul dari target 3.000.
 
 `[Klik Lanjut]`
 
@@ -161,7 +161,7 @@ Koperasi Kopi Gayo saat ini di **Level 7** dengan **12 hari beruntun** tanpa put
 
 Hari ini ada enam tugas yang terpampang.
 
-Tiga sudah selesai: verifikasi NIB dan izin edar BPOM, unggah spesifikasi produk, dan penetapan kapasitas produksi bulanan. Tugas aktif berikutnya adalah **pelajari klasifikasi HS Code 0901.21** — kode tarif untuk kopi arabika sangrai — senilai 150 XP dalam 12 menit.
+Tiga sudah selesai: verifikasi NIB dan izin edar BPOM, unggah spesifikasi produk, dan penetapan kapasitas produksi bulanan. Tugas aktif berikutnya adalah **pelajari klasifikasi HS Code gula semut (1702.90)** senilai 150 XP dalam 12 menit.
 
 Tidak ada lagi UMKM yang perlu menelepon Bea Cukai hanya untuk tahu kode HS produknya.
 
@@ -175,15 +175,15 @@ Tidak ada lagi UMKM yang perlu menelepon Bea Cukai hanya untuk tahu kode HS prod
 
 Perhatikan layar ini.
 
-Pertanyaan diketik otomatis: *"Dokumen apa saja yang wajib untuk ekspor kopi sangrai ke Jepang?"* — ini adalah pertanyaan nyata yang sering ditanyakan eksportir pemula.
+Pertanyaan diketik otomatis: *"Dokumen apa saja yang wajib untuk ekspor gula semut kelapa ke Jepang?"* — ini adalah pertanyaan nyata yang sering ditanyakan eksportir pemula.
 
-Copilot kami menggunakan arsitektur **RAG — Retrieval-Augmented Generation** — dengan basis data regulasi resmi: INSW, Permendag, MAFF Jepang, dan skema tarif IJEPA. Jawabannya bukan generik — ada **sitasi sumber** yang bisa ditelusuri.
+Copilot kami menggunakan arsitektur **RAG — Retrieval-Augmented Generation** — dengan korpus regulasi resmi yang dikurasi: INSW, Permendag, skema tarif IJEPA, dan referensi lartas/karantina. Jawabannya bukan generik — ada **sitasi sumber** yang bisa ditelusuri.
 
 `[Tunggu animasi jawaban pertama selesai]`
 
-Jawaban pertama: dokumen wajib adalah PEB via INSW, Commercial Invoice, Packing List, COO Form IJEPA untuk preferensi tarif, dan Phytosanitary Certificate dari Karantina.
+Jawaban pertama: dokumen wajib adalah PEB via INSW, Commercial Invoice, Packing List, Certificate of Origin, dan Health Certificate untuk produk pangan olahan karena Jepang menerapkan Food Sanitation Act.
 
-Pertanyaan kedua diajukan: *"Apakah Form IJEPA bisa menurunkan tarif bea masuk?"* Jawaban Copilot: **ya, tarif turun ke 0 persen** untuk kopi Gayo karena memenuhi kriteria *Wholly Obtained* di bawah IJEPA. Dan sistem sudah menyiapkan draf COO otomatis.
+Pertanyaan kedua bisa diajukan langsung ke kotak chat, live — bukan animasi terskrip. Contoh: *"Apakah Form IJEPA bisa menurunkan tarif bea masuk?"* Copilot menjawab dari korpus regulasi, dengan sitasi, dan secara eksplisit tidak akan menyebut dirinya sebagai penilai kelayakan kredit — itu tetap wewenang lembaga jasa keuangan.
 
 Input pertanyaan sesuai persis dengan output jawaban yang tersedia di menu Dokumen berikutnya.
 
@@ -197,17 +197,17 @@ Input pertanyaan sesuai persis dengan output jawaban yang tersedia di menu Dokum
 
 Skor kesiapan ekspor **82 dari 100** dihasilkan oleh rubrik berbobot transparan dari data legalitas, spesifikasi produk, kapasitas, dan rekam jejak Atomic Steps.
 
-Angka 82 bukan kualitatif — ini prediksi probabilistik bahwa UMKM ini akan berhasil menyelesaikan siklus ekspor mandiri. Di atas 80 adalah ambang batas yang kami tetapkan sebagai *export-ready*.
+Angka 82 bukan tebakan kualitatif — ini hasil terukur dari rubrik yang bobotnya kami tetapkan secara eksplisit: legalitas, spesifikasi produk, kapasitas produksi, dan konsistensi Atomic Steps. Di atas 80 adalah ambang batas yang kami tetapkan sebagai *export-ready*.
 
 `[Klik Lanjut]`
 
 ---
 
-### Langkah 8 — Transparan via SHAP
+### Langkah 8 — Transparan, Bukan Kotak Hitam
 
-Banyak sistem AI yang menjadi kotak hitam. Kami tidak.
+Banyak sistem penilaian yang menjadi kotak hitam. Kami tidak.
 
-Dengan **nilai SHAP**, kami tunjukkan faktor mana yang menaikkan skor — seperti streak konsistensi dan kelengkapan dokumen — dan faktor mana yang menurunkannya — seperti kapasitas produksi yang belum terkonfirmasi.
+Karena skornya adalah rubrik berbobot yang terbuka, kami bisa tunjukkan persis faktor mana yang menaikkan skor — seperti streak konsistensi dan kelengkapan dokumen — dan faktor mana yang menurunkannya — seperti kapasitas produksi yang belum terkonfirmasi.
 
 UMKM tahu persis apa yang harus diperbaiki untuk menaikkan skor mereka. Ini bukan penilaian, ini panduan.
 
@@ -231,9 +231,9 @@ Atomic Export menerapkan prinsip **single-entry, multi-output**: satu kali input
 
 Enam dokumen yang dihasilkan otomatis:
 
-**Commercial Invoice**, **Packing List**, **COO Form IJEPA** untuk preferensi tarif nol persen, **PEB** yang siap diajukan ke INSW, **klasifikasi HS** dengan kode 0901.21, dan **Phytosanitary Certificate** dari Karantina.
+**Commercial Invoice**, **Packing List**, **COO Form IJEPA** (draf, tetap perlu disahkan IPSKA berwenang), **PEB** (draf, tetap perlu diajukan lewat CEISA Bea Cukai), **klasifikasi HS** dengan kode 1702.90, dan **Formulir Pengajuan Health Certificate** untuk produk pangan.
 
-Semua sudah terisi, semua atas nama UMKM. Satu klik unduh, siap kirim ke forwarder.
+Semua sudah terisi dari satu data yang sama, semua atas nama UMKM. Satu klik unduh, hasilnya PDF asli — bukan mockup.
 
 `[Klik Lanjut]`
 
@@ -245,7 +245,7 @@ Semua sudah terisi, semua atas nama UMKM. Satu klik unduh, siap kirim ke forward
 
 Selama ini akses ke buyer internasional tersentralisasi di tangan agregator. Atomic Export membalikkan itu.
 
-Platform **P2P2B kami** mencocokkan UMKM langsung ke buyer terverifikasi menggunakan **cosine similarity** antara profil produk dengan kebutuhan buyer. Hasilnya: **Tokyo Coffee Co.** dengan *match score* 94 persen, dan **Osaka Roasters** dengan *match score* 87 persen — keduanya buyer aktif yang sudah diverifikasi.
+Platform **P2P2B kami** mencocokkan UMKM langsung ke buyer terverifikasi menggunakan rubrik berbobot — kecocokan HS Code, volume, dan incoterm — dihitung ulang otomatis dari data produk yang sama di panel Dokumen. Hasilnya: **Osaka Organic Foods** dan **Kyoto Natural Sweeteners** dengan *match score* 100 persen — keduanya buyer terverifikasi dan volumenya pas dengan kapasitas kita.
 
 `[Klik Lanjut]`
 
@@ -255,7 +255,7 @@ Platform **P2P2B kami** mencocokkan UMKM langsung ke buyer terverifikasi menggun
 
 Di sini yang membedakan Atomic Export dari model agregator biasa.
 
-Beberapa UMKM bergabung dalam konsorsium — bukan untuk kehilangan identitas, tapi untuk **berbagi ongkos logistik sambil tetap mempertahankan PEB, buyer, dan margin masing-masing**. Koperasi Kopi Gayo tetap berdagang langsung dengan Tokyo Coffee Co. Koperasi lain berdagang dengan buyer mereka sendiri. Kontainer dibagi, biaya dibagi, tapi keuntungan dan rekam jejak tetap milik masing-masing.
+Beberapa UMKM bergabung dalam konsorsium — bukan untuk kehilangan identitas, tapi untuk **berbagi ongkos logistik sambil tetap mempertahankan PEB, buyer, dan margin masing-masing**. Koperasi Gula Semut Langgongsari tetap berdagang langsung dengan Osaka Organic Foods. Koperasi lain berdagang dengan buyer mereka sendiri. Kontainer dibagi, biaya dibagi, tapi keuntungan dan rekam jejak tetap milik masing-masing.
 
 `[Klik Lanjut]`
 
@@ -265,9 +265,9 @@ Beberapa UMKM bergabung dalam konsorsium — bukan untuk kehilangan identitas, t
 
 `[Panel berpindah ke QC Hybrid]`
 
-Kepercayaan buyer internasional dibangun dari konsistensi mutu. Kami tidak mengandalkan inspeksi manual saja.
+Kepercayaan buyer internasional dibangun dari konsistensi mutu. Kami tidak ingin mengandalkan inspeksi manual saja.
 
-Sistem **QC Hybrid** kami menggabungkan model **EfficientNet-B4** untuk verifikasi visual secara otomatis dengan surveyor independen di lapangan. Setiap batch kopi diverifikasi sebelum masuk kontainer, per-UMKM, bukan per-lot kolektif. Sehingga jika ada masalah, bisa diisolasi tanpa merusak seluruh pengiriman.
+Ini bagian yang jujur kami tandai sebagai **simulasi, bukan berjalan** — modelnya belum dikalibrasi dengan data lapangan. Konsepnya: menggabungkan verifikasi visual computer vision dengan surveyor independen di lapangan, setiap batch diverifikasi sebelum masuk kontainer per-UMKM, bukan per-lot kolektif, supaya kalau ada masalah bisa diisolasi tanpa merusak seluruh pengiriman.
 
 `[Klik Lanjut]`
 
@@ -275,9 +275,9 @@ Sistem **QC Hybrid** kami menggabungkan model **EfficientNet-B4** untuk verifika
 
 ### Langkah 14 — Gatekeeper Mutu Otomatis
 
-Batch yang tidak lolos standar **ditahan otomatis** sebelum masuk ke proses konsolidasi.
+Rancangannya: batch yang tidak lolos standar **ditahan otomatis** sebelum masuk ke proses konsolidasi — begitu model QC-nya sudah dikalibrasi dan berjalan.
 
-Ini melindungi dua hal sekaligus: reputasi eksportir yang lain dalam konsorsium, dan reputasi platform secara keseluruhan di mata buyer. *Rejection rate* per eksportir turun, kepercayaan buyer naik — ini *flywheel* kedua yang bekerja secara paralel.
+Tujuannya melindungi dua hal sekaligus: reputasi eksportir yang lain dalam konsorsium, dan reputasi platform secara keseluruhan di mata buyer. Kalau berjalan, *rejection rate* per eksportir turun, kepercayaan buyer naik — ini *flywheel* kedua yang dirancang bekerja paralel dengan flywheel utama.
 
 `[Klik Lanjut]`
 
@@ -289,7 +289,7 @@ Ini melindungi dua hal sekaligus: reputasi eksportir yang lain dalam konsorsium,
 
 Satu kontainer penuh lebih murah per unit daripada pengiriman kecil-kecilan. Tapi UMKM tidak punya cukup kargo untuk memenuhi satu kontainer sendiri.
 
-Atomic Export memecahkan ini dengan **konsolidasi LCL ke FCL** — kargo kecil dari beberapa UMKM digabungkan menjadi satu kontainer penuh. Hasilnya: **efisiensi biaya 43 persen per unit** dibandingkan pengiriman LCL individual.
+Atomic Export memecahkan ini dengan **konsolidasi LCL ke FCL** — kargo kecil dari beberapa UMKM digabungkan menjadi satu kontainer penuh. Hasilnya: **efisiensi biaya sekitar 30 persen per unit** dibandingkan pengiriman LCL individual.
 
 `[Klik Lanjut]`
 
@@ -311,7 +311,7 @@ Legalitasnya bagaimana? Terjamin.
 
 Dan inilah tujuan akhir dari seluruh proses ini.
 
-Setiap transaksi yang tercatat atas nama UMKM — setiap PEB, setiap pembayaran dari buyer, setiap pengiriman berhasil — terakumulasi menjadi **skor kredit alternatif**. Koperasi Kopi Gayo saat ini memiliki skor **720**, dengan label **Layak Pembiayaan**, dibangun dari tiga transaksi ekspor atas nama sendiri.
+Setiap transaksi yang tercatat atas nama UMKM — setiap PEB, setiap pembayaran dari buyer, setiap pengiriman berhasil — dihitung dengan rubrik transparan (jumlah transaksi, keragaman buyer, nilai kumulatif, keaktifan terbaru) jadi **skor kredit alternatif**, bukan skor kredit resmi dari lembaga jasa keuangan. Koperasi Gula Semut Langgongsari saat ini memiliki skor **724**, dengan label **Layak Pembiayaan**, dibangun dari tiga transaksi ekspor atas nama sendiri — dan skor ini genuinely dihitung ulang setiap kali ada transaksi baru yang dicatat, live di depan Anda kalau mau dicoba.
 
 Ini adalah aset keuangan yang sebelumnya tidak pernah mereka miliki.
 
@@ -323,7 +323,7 @@ Ini adalah aset keuangan yang sebelumnya tidak pernah mereka miliki.
 
 Dan inilah bukti konkritnya.
 
-Tiga transaksi ekspor tercatat permanen atas nama Koperasi Kopi Gayo: pengiriman ke **Tokyo Coffee Co.** senilai Rp 320 juta dengan PEB-0312, ke **Osaka Roasters** senilai Rp 240 juta dengan PEB-0287, dan ke **Tokyo Coffee Co.** lagi senilai Rp 180 juta dengan PEB-0241. Semua status: **Selesai**.
+Tiga transaksi ekspor tercatat permanen atas nama Koperasi Gula Semut Langgongsari: pengiriman ke **Osaka Organic Foods** senilai Rp 320 juta dengan PEB-0312, ke **Kyoto Natural Sweeteners** senilai Rp 240 juta dengan PEB-0287, dan ke **Osaka Organic Foods** lagi senilai Rp 180 juta dengan PEB-0241. Semua status: **Selesai**.
 
 Dokumen ini bisa diserahkan ke lembaga keuangan — bank, koperasi simpan pinjam, atau fintech — sebagai dasar pengajuan pembiayaan.
 
