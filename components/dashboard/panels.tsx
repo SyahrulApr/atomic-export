@@ -45,6 +45,7 @@ import {
   AlertTriangle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { DOC_TYPES, type DocType, type ExportDocInput } from '@/lib/documents/types'
 
 /* ============================================================ PRIMITIVES */
 function Card({
@@ -790,16 +791,115 @@ export function ReadinessPanel() {
 }
 
 /* =============================================================== DOCUMENTS */
-const docs = [
-  { name: 'Commercial Invoice', code: 'CI-2026-0312', status: 'Siap', icon: FileText },
-  { name: 'Packing List', code: 'PL-2026-0312', status: 'Siap', icon: Package },
-  { name: 'Certificate of Origin (Form IJEPA)', code: 'COO-2026-0312', status: 'Siap', icon: BadgeCheck },
-  { name: 'PEB, Pemberitahuan Ekspor Barang', code: 'PEB-DRAFT', status: 'Draf', icon: FileText },
-  { name: 'Klasifikasi HS Code 1702.90', code: 'HS-REVIEW', status: 'Terverifikasi', icon: CheckCheck },
-  { name: 'Health Certificate produk pangan', code: 'HC-REQ', status: 'Menunggu', icon: ShieldCheck },
+const DEMO_EXPORT_DOC_INPUT: ExportDocInput = {
+  exporterName: 'Koperasi Gula Semut Langgongsari',
+  exporterAddress: 'Desa Langgongsari, Kec. Cilongok, Kab. Banyumas, Jawa Tengah',
+  exporterNib: '9120012345678',
+  buyerName: 'Osaka Organic Foods',
+  buyerAddress: '2-1 Umeda, Kita-ku',
+  buyerCountry: 'Jepang',
+  productName: 'Gula Semut Kelapa Organik',
+  hsCode: '1702.90',
+  quantity: '5000',
+  unit: 'kg',
+  unitPrice: '3.20',
+  currency: 'USD',
+  incoterm: 'FOB',
+  portOfLoading: 'Tanjung Emas, Semarang',
+  portOfDestination: 'Osaka, Jepang',
+  vesselOrFlight: 'MV Pacific Trader',
+  invoiceNumber: 'CI-2026-0312',
+  invoiceDate: '2026-09-02',
+  netWeightKg: '5000',
+  grossWeightKg: '5150',
+  packageCount: '200',
+  packageType: 'Karton 25kg',
+}
+
+const docs: { name: string; code: string; status: string; icon: typeof FileText; type: DocType }[] = [
+  { name: 'Commercial Invoice', code: 'CI-2026-0312', status: 'Siap', icon: FileText, type: 'commercial-invoice' },
+  { name: 'Packing List', code: 'PL-2026-0312', status: 'Siap', icon: Package, type: 'packing-list' },
+  {
+    name: 'Certificate of Origin (Form IJEPA)',
+    code: 'COO-2026-0312',
+    status: 'Draf',
+    icon: BadgeCheck,
+    type: 'coo-ijepa',
+  },
+  { name: 'PEB, Pemberitahuan Ekspor Barang', code: 'PEB-DRAFT', status: 'Draf', icon: FileText, type: 'peb-draft' },
+  {
+    name: 'Klasifikasi HS Code 1702.90',
+    code: 'HS-REVIEW',
+    status: 'Siap',
+    icon: CheckCheck,
+    type: 'hs-classification',
+  },
+  {
+    name: 'Health Certificate produk pangan',
+    code: 'HC-REQ',
+    status: 'Menunggu',
+    icon: ShieldCheck,
+    type: 'health-certificate-request',
+  },
 ]
 
+function DocField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string
+  value: string
+  onChange: (v: string) => void
+}) {
+  return (
+    <label className="flex flex-col gap-1">
+      <span className="text-[11px] font-medium text-muted-foreground">{label}</span>
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none placeholder:text-muted-foreground/60 focus:border-primary/50"
+      />
+    </label>
+  )
+}
+
 export function DocumentsPanel() {
+  const [form, setForm] = useState<ExportDocInput>(DEMO_EXPORT_DOC_INPUT)
+  const [formOpen, setFormOpen] = useState(false)
+  const [downloading, setDownloading] = useState<DocType | null>(null)
+  const [error, setError] = useState('')
+
+  function update(key: keyof ExportDocInput, value: string) {
+    setForm((f) => ({ ...f, [key]: value }))
+  }
+
+  async function handleDownload(type: DocType, filename: string) {
+    setError('')
+    setDownloading(type)
+    try {
+      const res = await fetch('/api/documents', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, data: form }),
+      })
+      if (!res.ok) throw new Error('failed')
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = filename
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      URL.revokeObjectURL(url)
+    } catch {
+      setError('Gagal membuat dokumen. Coba lagi.')
+    } finally {
+      setDownloading(null)
+    }
+  }
+
   return (
     <Panel>
       <Card data-tour="docs-hero" className="border-primary/30 bg-primary/[0.03]">
@@ -815,11 +915,62 @@ export function DocumentsPanel() {
               </p>
             </div>
           </div>
-          <Pill tone="success">
-            <CheckCheck className="h-3 w-3" /> Zero-Defect · 0 error
-          </Pill>
+          <button
+            onClick={() => setFormOpen((v) => !v)}
+            className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium transition-colors hover:bg-muted"
+          >
+            {formOpen ? 'Sembunyikan data' : 'Lihat / ubah data'}
+          </button>
         </div>
+
+        {formOpen && (
+          <div className="mt-4 space-y-4 border-t border-border pt-4">
+            <div>
+              <p className="mb-2 text-xs font-semibold text-primary">Eksportir</p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <DocField label="Nama" value={form.exporterName} onChange={(v) => update('exporterName', v)} />
+                <DocField label="NIB" value={form.exporterNib} onChange={(v) => update('exporterNib', v)} />
+                <DocField label="Alamat" value={form.exporterAddress} onChange={(v) => update('exporterAddress', v)} />
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 text-xs font-semibold text-primary">Pembeli</p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <DocField label="Nama" value={form.buyerName} onChange={(v) => update('buyerName', v)} />
+                <DocField label="Negara" value={form.buyerCountry} onChange={(v) => update('buyerCountry', v)} />
+                <DocField label="Alamat" value={form.buyerAddress} onChange={(v) => update('buyerAddress', v)} />
+              </div>
+            </div>
+            <div>
+              <p className="mb-2 text-xs font-semibold text-primary">Produk & Pengiriman</p>
+              <div className="grid gap-3 sm:grid-cols-4">
+                <DocField label="Nama Produk" value={form.productName} onChange={(v) => update('productName', v)} />
+                <DocField label="HS Code" value={form.hsCode} onChange={(v) => update('hsCode', v)} />
+                <DocField label="Jumlah" value={form.quantity} onChange={(v) => update('quantity', v)} />
+                <DocField label="Satuan" value={form.unit} onChange={(v) => update('unit', v)} />
+                <DocField label="Harga Satuan" value={form.unitPrice} onChange={(v) => update('unitPrice', v)} />
+                <DocField label="Mata Uang" value={form.currency} onChange={(v) => update('currency', v)} />
+                <DocField label="Incoterm" value={form.incoterm} onChange={(v) => update('incoterm', v)} />
+                <DocField label="No. Invoice" value={form.invoiceNumber} onChange={(v) => update('invoiceNumber', v)} />
+                <DocField label="Tanggal Invoice" value={form.invoiceDate} onChange={(v) => update('invoiceDate', v)} />
+                <DocField label="Pelabuhan Muat" value={form.portOfLoading} onChange={(v) => update('portOfLoading', v)} />
+                <DocField
+                  label="Pelabuhan Tujuan"
+                  value={form.portOfDestination}
+                  onChange={(v) => update('portOfDestination', v)}
+                />
+                <DocField label="Sarana Angkut" value={form.vesselOrFlight} onChange={(v) => update('vesselOrFlight', v)} />
+                <DocField label="Berat Bersih (kg)" value={form.netWeightKg} onChange={(v) => update('netWeightKg', v)} />
+                <DocField label="Berat Kotor (kg)" value={form.grossWeightKg} onChange={(v) => update('grossWeightKg', v)} />
+                <DocField label="Jumlah Kemasan" value={form.packageCount} onChange={(v) => update('packageCount', v)} />
+                <DocField label="Jenis Kemasan" value={form.packageType} onChange={(v) => update('packageType', v)} />
+              </div>
+            </div>
+          </div>
+        )}
       </Card>
+
+      {error && <p className="text-xs text-destructive">{error}</p>}
 
       <div data-tour="docs-grid" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {docs.map((d) => {
@@ -829,6 +980,8 @@ export function DocumentsPanel() {
               : d.status === 'Draf'
                 ? 'primary'
                 : 'warning'
+          const meta = DOC_TYPES.find((t) => t.type === d.type)!
+          const isDownloading = downloading === d.type
           return (
             <Card key={d.name} className="flex flex-col">
               <div className="flex items-start justify-between">
@@ -841,9 +994,13 @@ export function DocumentsPanel() {
               </div>
               <h3 className="mt-3 text-sm font-semibold leading-snug">{d.name}</h3>
               <p className="font-mono text-[11px] text-muted-foreground">{d.code}</p>
-              <button className="mt-4 flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-xs font-medium transition-colors hover:bg-muted">
+              <button
+                onClick={() => handleDownload(d.type, meta.filename)}
+                disabled={isDownloading}
+                className="mt-4 flex items-center justify-center gap-2 rounded-lg border border-border py-2 text-xs font-medium transition-colors hover:bg-muted disabled:opacity-50"
+              >
                 <Download className="h-3.5 w-3.5" />
-                Unduh PDF
+                {isDownloading ? 'Membuat…' : 'Unduh PDF'}
               </button>
             </Card>
           )
