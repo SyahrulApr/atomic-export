@@ -23,6 +23,31 @@ export type ExportDocInput = {
   packageType: string
 }
 
+export const DEMO_EXPORT_DOC_INPUT: ExportDocInput = {
+  exporterName: 'Koperasi Gula Semut Langgongsari',
+  exporterAddress: 'Desa Langgongsari, Kec. Cilongok, Kab. Banyumas, Jawa Tengah',
+  exporterNib: '9120012345678',
+  buyerName: 'Osaka Organic Foods',
+  buyerAddress: '2-1 Umeda, Kita-ku',
+  buyerCountry: 'Jepang',
+  productName: 'Gula Semut Kelapa Organik',
+  hsCode: '1702.90',
+  quantity: '5000',
+  unit: 'kg',
+  unitPrice: '3.20',
+  currency: 'USD',
+  incoterm: 'FOB',
+  portOfLoading: 'Tanjung Emas, Semarang',
+  portOfDestination: 'Osaka, Jepang',
+  vesselOrFlight: 'MV Pacific Trader',
+  invoiceNumber: 'CI-2026-0312',
+  invoiceDate: '2026-09-02',
+  netWeightKg: '5000',
+  grossWeightKg: '5150',
+  packageCount: '200',
+  packageType: 'Karton 25kg',
+}
+
 export const EMPTY_EXPORT_DOC_INPUT: ExportDocInput = {
   exporterName: '',
   exporterAddress: '',

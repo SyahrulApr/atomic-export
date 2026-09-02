@@ -45,7 +45,7 @@ import {
   AlertTriangle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { DOC_TYPES, type DocType, type ExportDocInput } from '@/lib/documents/types'
+import { DEMO_EXPORT_DOC_INPUT, DOC_TYPES, type DocType, type ExportDocInput } from '@/lib/documents/types'
 
 /* ============================================================ PRIMITIVES */
 function Card({
@@ -791,31 +791,6 @@ export function ReadinessPanel() {
 }
 
 /* =============================================================== DOCUMENTS */
-const DEMO_EXPORT_DOC_INPUT: ExportDocInput = {
-  exporterName: 'Koperasi Gula Semut Langgongsari',
-  exporterAddress: 'Desa Langgongsari, Kec. Cilongok, Kab. Banyumas, Jawa Tengah',
-  exporterNib: '9120012345678',
-  buyerName: 'Osaka Organic Foods',
-  buyerAddress: '2-1 Umeda, Kita-ku',
-  buyerCountry: 'Jepang',
-  productName: 'Gula Semut Kelapa Organik',
-  hsCode: '1702.90',
-  quantity: '5000',
-  unit: 'kg',
-  unitPrice: '3.20',
-  currency: 'USD',
-  incoterm: 'FOB',
-  portOfLoading: 'Tanjung Emas, Semarang',
-  portOfDestination: 'Osaka, Jepang',
-  vesselOrFlight: 'MV Pacific Trader',
-  invoiceNumber: 'CI-2026-0312',
-  invoiceDate: '2026-09-02',
-  netWeightKg: '5000',
-  grossWeightKg: '5150',
-  packageCount: '200',
-  packageType: 'Karton 25kg',
-}
-
 const docs: { name: string; code: string; status: string; icon: typeof FileText; type: DocType }[] = [
   { name: 'Commercial Invoice', code: 'CI-2026-0312', status: 'Siap', icon: FileText, type: 'commercial-invoice' },
   { name: 'Packing List', code: 'PL-2026-0312', status: 'Siap', icon: Package, type: 'packing-list' },
@@ -847,15 +822,18 @@ function DocField({
   label,
   value,
   onChange,
+  type = 'text',
 }: {
   label: string
   value: string
   onChange: (v: string) => void
+  type?: string
 }) {
   return (
     <label className="flex flex-col gap-1">
       <span className="text-[11px] font-medium text-muted-foreground">{label}</span>
       <input
+        type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none placeholder:text-muted-foreground/60 focus:border-primary/50"
@@ -869,10 +847,38 @@ export function DocumentsPanel() {
   const [formOpen, setFormOpen] = useState(false)
   const [downloading, setDownloading] = useState<DocType | null>(null)
   const [error, setError] = useState('')
+  const loadedRef = useRef(false)
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    fetch('/api/profile')
+      .then((r) => r.json())
+      .then((data: ExportDocInput) => setForm(data))
+      .catch(() => {})
+      .finally(() => {
+        loadedRef.current = true
+      })
+  }, [])
 
   function update(key: keyof ExportDocInput, value: string) {
     setForm((f) => ({ ...f, [key]: value }))
   }
+
+  useEffect(() => {
+    if (!loadedRef.current) return
+    if (saveTimer.current) clearTimeout(saveTimer.current)
+    saveTimer.current = setTimeout(() => {
+      fetch('/api/profile', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      }).catch(() => {})
+    }, 600)
+    return () => {
+      if (saveTimer.current) clearTimeout(saveTimer.current)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form])
 
   async function handleDownload(type: DocType, filename: string) {
     setError('')
@@ -1017,13 +1023,27 @@ const demand = [
   { m: 'Q3', v: 78 },
   { m: 'Q4', v: 91 },
 ]
-const buyers = [
-  { name: 'Osaka Organic Foods', loc: 'Osaka, Jepang', match: 94, verified: true, vol: '2× 20ft / kuartal' },
-  { name: 'Kyoto Natural Sweeteners', loc: 'Kyoto, Jepang', match: 89, verified: true, vol: '1× 20ft / kuartal' },
-  { name: 'Tokyo Wholefoods Trading', loc: 'Tokyo, Jepang', match: 81, verified: false, vol: 'LCL fleksibel' },
-]
+type BuyerMatch = {
+  name: string
+  loc: string
+  vol: string
+  verified: boolean
+  match: number
+  reasons: string[]
+}
 
 export function MarketPanel() {
+  const [buyers, setBuyers] = useState<BuyerMatch[]>([])
+  const [matchLoading, setMatchLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/market/matches')
+      .then((r) => r.json())
+      .then((data: { matches: BuyerMatch[] }) => setBuyers(data.matches))
+      .catch(() => {})
+      .finally(() => setMatchLoading(false))
+  }, [])
+
   return (
     <Panel>
       <div className="grid gap-5 lg:grid-cols-3">
@@ -1043,18 +1063,22 @@ export function MarketPanel() {
             </ResponsiveContainer>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Tren naik +47% YoY · spek dicocokkan ke produk Anda secara real-time.
+            Indeks ilustratif dari riset pasar, belum feed data live.
           </p>
         </Card>
 
         <Card data-tour="market-buyers" className="lg:col-span-2">
-          <CardTitle icon={Globe2} sub="P2P2B Matchmaking · cosine similarity produk ke buyer">
+          <CardTitle icon={Globe2} sub="P2P2B Matchmaking · rubrik berbobot: HS Code, volume, incoterm">
             Verified International Buyers
           </CardTitle>
           <div className="space-y-3">
+            {matchLoading && (
+              <p className="text-xs text-muted-foreground">Menghitung kecocokan dari data produk Anda…</p>
+            )}
             {buyers.map((b) => (
               <div
                 key={b.name}
+                title={b.reasons.join(' · ')}
                 className="flex items-center gap-4 rounded-xl border border-border p-3.5"
               >
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-muted font-semibold">
@@ -1078,6 +1102,9 @@ export function MarketPanel() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-[11px] text-muted-foreground">
+            Skor dihitung ulang otomatis dari data produk di panel Dokumen — ubah HS Code/volume di sana untuk lihat skor berubah.
+          </p>
         </Card>
       </div>
 
@@ -1298,26 +1325,79 @@ export function LogisticsPanel() {
 }
 
 /* ============================================================ TRACK RECORD */
-const history = [
-  { date: '2026-02-18', buyer: 'Osaka Organic Foods', val: '320 jt', peb: 'PEB-0312', status: 'Selesai' },
-  { date: '2026-01-22', buyer: 'Kyoto Natural Sweeteners', val: '240 jt', peb: 'PEB-0287', status: 'Selesai' },
-  { date: '2025-12-09', buyer: 'Osaka Organic Foods', val: '180 jt', peb: 'PEB-0241', status: 'Selesai' },
-]
+type TrackEvent = {
+  id: string
+  date: string
+  buyerName: string
+  valueJutaIdr: number
+  pebNumber: string
+  status: string
+}
+type TrackRecordData = {
+  score: number
+  steps: { t: string; done: boolean }[]
+  history: TrackEvent[]
+}
+const EMPTY_NEW_EVENT = { date: '', buyerName: '', valueJutaIdr: '', pebNumber: '' }
 
 export function TrackRecordPanel() {
+  const [data, setData] = useState<TrackRecordData | null>(null)
+  const [showAdd, setShowAdd] = useState(false)
+  const [newEvent, setNewEvent] = useState(EMPTY_NEW_EVENT)
+  const [submitting, setSubmitting] = useState(false)
+
+  function load() {
+    fetch('/api/track-record')
+      .then((r) => r.json())
+      .then(setData)
+      .catch(() => {})
+  }
+  useEffect(load, [])
+
+  async function handleAdd() {
+    if (!newEvent.date || !newEvent.buyerName || !newEvent.pebNumber || !newEvent.valueJutaIdr) return
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/track-record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date: newEvent.date,
+          buyerName: newEvent.buyerName,
+          valueJutaIdr: Number(newEvent.valueJutaIdr),
+          pebNumber: newEvent.pebNumber,
+          status: 'Selesai',
+        }),
+      })
+      if (res.ok) {
+        setData(await res.json())
+        setNewEvent(EMPTY_NEW_EVENT)
+        setShowAdd(false)
+      }
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  const score = data?.score ?? 500
+  const steps = data?.steps ?? []
+  const history = data?.history ?? []
+  const tier = score >= 650 ? 'success' : score >= 500 ? 'primary' : 'warning'
+  const tierLabel = score >= 650 ? 'Layak pembiayaan' : score >= 500 ? 'Sedang membangun rekam jejak' : 'Baru mulai'
+
   return (
     <Panel>
       <div className="grid gap-5 lg:grid-cols-3">
         <Card data-tour="track-score" className="flex flex-col items-center justify-center text-center">
           <p className="text-xs text-muted-foreground">Alternative Credit Score</p>
           <div className="mt-2 font-display text-5xl tracking-tight">
-            <span className="gradient-text">720</span>
+            <span className="gradient-text">{score}</span>
           </div>
-          <Pill tone="success">
-            <TrendingUp className="h-3 w-3" /> Layak pembiayaan
+          <Pill tone={tier as 'success' | 'primary' | 'warning'}>
+            <TrendingUp className="h-3 w-3" /> {tierLabel}
           </Pill>
           <p className="mt-3 text-xs text-muted-foreground">
-            Dibangun dari behavioral log & 3 transaksi ekspor atas nama sendiri.
+            Dibangun dari {history.length} transaksi ekspor atas nama sendiri · rubrik transparan, bukan skor kredit resmi lembaga jasa keuangan.
           </p>
         </Card>
 
@@ -1326,12 +1406,7 @@ export function TrackRecordPanel() {
             Dari Unbankable ke Layak Modal
           </CardTitle>
           <div className="flex items-center gap-2">
-            {[
-              { t: 'Unbankable', done: true },
-              { t: 'Rekam jejak terbentuk', done: true },
-              { t: 'Credit identity', done: true },
-              { t: 'Akses pembiayaan formal', done: false },
-            ].map((s, i, arr) => (
+            {steps.map((s, i, arr) => (
               <div key={s.t} className="flex flex-1 items-center">
                 <div className="flex flex-1 flex-col items-center text-center">
                   <span
@@ -1376,9 +1451,51 @@ export function TrackRecordPanel() {
       </div>
 
       <Card data-tour="track-history">
-        <CardTitle icon={FileText} sub="Tercatat permanen atas nama UMKM (bukan perantara)">
-          Riwayat Ekspor
-        </CardTitle>
+        <div className="flex items-center justify-between gap-3">
+          <CardTitle icon={FileText} sub="Tercatat permanen atas nama UMKM (bukan perantara)">
+            Riwayat Ekspor
+          </CardTitle>
+          <button
+            onClick={() => setShowAdd((v) => !v)}
+            className="mb-4 rounded-lg border border-border px-3 py-1.5 text-xs font-medium transition-colors hover:bg-muted"
+          >
+            + Catat Transaksi
+          </button>
+        </div>
+
+        {showAdd && (
+          <div className="mb-4 grid gap-3 rounded-xl border border-border p-3.5 sm:grid-cols-5">
+            <DocField
+              label="Tanggal"
+              type="date"
+              value={newEvent.date}
+              onChange={(v) => setNewEvent((e) => ({ ...e, date: v }))}
+            />
+            <DocField
+              label="Buyer"
+              value={newEvent.buyerName}
+              onChange={(v) => setNewEvent((e) => ({ ...e, buyerName: v }))}
+            />
+            <DocField
+              label="Nilai (juta Rp)"
+              value={newEvent.valueJutaIdr}
+              onChange={(v) => setNewEvent((e) => ({ ...e, valueJutaIdr: v }))}
+            />
+            <DocField
+              label="No. PEB"
+              value={newEvent.pebNumber}
+              onChange={(v) => setNewEvent((e) => ({ ...e, pebNumber: v }))}
+            />
+            <button
+              onClick={handleAdd}
+              disabled={submitting}
+              className="mt-5 flex items-center justify-center gap-2 rounded-lg gradient-brand py-2 text-xs font-medium text-white disabled:opacity-50"
+            >
+              {submitting ? 'Menyimpan…' : 'Simpan'}
+            </button>
+          </div>
+        )}
+
         <div className="overflow-hidden rounded-xl border border-border">
           <table className="w-full text-sm">
             <thead className="bg-muted/60 text-xs text-muted-foreground">
@@ -1392,11 +1509,11 @@ export function TrackRecordPanel() {
             </thead>
             <tbody>
               {history.map((h) => (
-                <tr key={h.peb} className="border-t border-border">
+                <tr key={h.id} className="border-t border-border">
                   <td className="px-4 py-3 font-mono text-xs">{h.date}</td>
-                  <td className="px-4 py-3">{h.buyer}</td>
-                  <td className="px-4 py-3 font-medium">Rp {h.val}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-primary">{h.peb}</td>
+                  <td className="px-4 py-3">{h.buyerName}</td>
+                  <td className="px-4 py-3 font-medium">Rp {h.valueJutaIdr} jt</td>
+                  <td className="px-4 py-3 font-mono text-xs text-primary">{h.pebNumber}</td>
                   <td className="px-4 py-3">
                     <Pill tone="success">
                       <CheckCircle2 className="h-3 w-3" /> {h.status}
